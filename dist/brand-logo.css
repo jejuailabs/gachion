@@ -1,10 +1,7 @@
-/* The arae-a is part of the image, independent of installed Hangul fonts. */
+/* Display the supplied logo unchanged; crop only its surrounding whitespace. */
 body.motion-site .brand{display:inline-flex;align-items:center;flex:0 0 auto;line-height:1;letter-spacing:0}
-body.motion-site .brand .brand-image{display:block;width:180px;height:auto;max-width:none;object-fit:contain}
-body.motion-site footer .brand .brand-image{width:170px}
-@media(max-width:800px){body.motion-site .site-header .brand .brand-image{width:145px}body.motion-site .nav-wrap{gap:12px}}
-@media(max-width:380px){body.motion-site .site-header .brand .brand-image{width:126px}body.motion-site .nav-wrap{gap:8px}}
-
-body.motion-site .brand .brand-image{background:transparent;border-radius:0}
-
-html[data-mode="cloud"] body.motion-site .brand-image,html[data-mode="mindora"] body.motion-site .brand-image{filter:invert(1) hue-rotate(180deg)}
+body.motion-site .brand-crop{display:block;position:relative;width:180px;aspect-ratio:1062/268;overflow:hidden;background:#fff;border-radius:3px}
+body.motion-site .brand .brand-image{position:absolute;display:block;width:118.0791%;height:auto;max-width:none;left:-9.03955%;top:-174.62687%;filter:none}
+body.motion-site footer .brand-crop{width:170px}
+@media(max-width:800px){body.motion-site .site-header .brand-crop{width:145px}body.motion-site .nav-wrap{gap:12px}}
+@media(max-width:380px){body.motion-site .site-header .brand-crop{width:126px}body.motion-site .nav-wrap{gap:8px}}

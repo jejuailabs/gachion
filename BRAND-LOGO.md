@@ -15,3 +15,7 @@ Create one polished professional horizontal logo image for a Jeju Korean communi
 Final website asset: `dist/assets/gachi-on-type.svg`. Original generated PNG retained for history. The final logo uses custom vector letterforms to remove raster artifacts, no glow or badge, off-white strokes and a muted mint arae-a dot paired with the ON switch stroke. Header and footer adapt to light themes.
 
 Built-in image generation explored this prompt: Refined contemporary typographic Jeju arae-a wordmark, flat off-white letters, mint arae-a and switch stroke, transparent background, no gold, glow, outlines, badge, gradients or texture. Final precise letterforms were authored as native SVG.
+
+## User-selected final logo
+
+The supplied `ChatGPT Image 2026년 9월 23일 오전 07_54_04.png` is copied unchanged to `dist/assets/gachi-on-approved.png`. Header and footer now use this asset. CSS crops surrounding white space only; the orange ON, arae-a dot, lowercase i and all original artwork remain unchanged. Previous assets are retained for rollback.
