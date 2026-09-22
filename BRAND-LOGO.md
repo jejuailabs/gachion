@@ -9,3 +9,9 @@
 ## Generation prompt
 
 Create one polished professional horizontal logo image for a Jeju Korean community AI website. Transparent background, tightly framed horizontal wordmark, no mockup, no additional text. Exact brand lettering: 'ᄀᆞ치 ON AI'. CRITICAL first syllable uses archaic Jeju arae-a: a bold Korean ㄱ shaped right-angle stroke at the TOP with a single solid round dot centered BELOW it, within the same syllable block. It is NOT 가, NOT 고, NOT ㄱ followed by a dot horizontally. Next syllable is 치. Then uppercase ON then AI. Elegant bold contemporary rounded geometric lettering, clear optical spacing, premium restrained identity. Korean letters and AI in deep midnight navy with a very thin warm ivory edge so readable on both light and dark website headers. ON in warm amber gold; integrate a vertical power-switch stroke into the O so it is simultaneously legible O and an illuminated ON power symbol. A very subtle warm light halo ONLY around ON evokes turning on a light against the intimidating darkness of AI. Flat crisp vector-like silhouette, beautifully balanced, no cartoon lightbulbs, no giant icon separate from the wordmark, no subtitle, no presentation board. Wide 3:1 composition with minimal transparent margins. Save the output as a usable PNG image.
+
+## Typography revision
+
+Final website asset: `dist/assets/gachi-on-type.svg`. Original generated PNG retained for history. The final logo uses custom vector letterforms to remove raster artifacts, no glow or badge, off-white strokes and a muted mint arae-a dot paired with the ON switch stroke. Header and footer adapt to light themes.
+
+Built-in image generation explored this prompt: Refined contemporary typographic Jeju arae-a wordmark, flat off-white letters, mint arae-a and switch stroke, transparent background, no gold, glow, outlines, badge, gradients or texture. Final precise letterforms were authored as native SVG.

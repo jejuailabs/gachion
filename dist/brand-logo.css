@@ -5,4 +5,6 @@ body.motion-site footer .brand .brand-image{width:170px}
 @media(max-width:800px){body.motion-site .site-header .brand .brand-image{width:145px}body.motion-site .nav-wrap{gap:12px}}
 @media(max-width:380px){body.motion-site .site-header .brand .brand-image{width:126px}body.motion-site .nav-wrap{gap:8px}}
 
-body.motion-site .brand .brand-image{background:#f6f3ec;border-radius:9px}
+body.motion-site .brand .brand-image{background:transparent;border-radius:0}
+
+html[data-mode="cloud"] body.motion-site .brand-image,html[data-mode="mindora"] body.motion-site .brand-image{filter:invert(1) hue-rotate(180deg)}
