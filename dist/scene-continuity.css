@@ -1,0 +1,26 @@
+/* A live opening, a long dissolve, and a quiet material memory below it. */
+html{--scene-base:var(--world-bg,#080f13);--scene-art:radial-gradient(ellipse at 85% 40%,#327d7155,transparent 60%);--scene-strength:.38}
+html[data-mode=ayush]{--scene-art:url('assets/ayush-art.png');--scene-strength:.42}
+html[data-mode=cloud]{--scene-art:url('assets/cloud-art.png');--scene-strength:.34}
+html[data-mode=axle]{--scene-art:url('assets/axle-cinematic-city.png');--scene-strength:.38}
+html[data-mode=mindora]{--scene-art:url('assets/mindora-glass.png');--scene-strength:.37}
+html[data-mode=frontier]{--scene-art:url('assets/frontier-garden.png');--scene-strength:.48}
+body.motion-site{isolation:isolate}
+.scene-atmosphere{position:fixed;inset:-45px;z-index:-1;pointer-events:none;overflow:hidden;background:var(--scene-base)}
+.scene-atmosphere:before{content:'';position:absolute;inset:0;background-image:var(--scene-art);background-size:cover;background-position:center;opacity:var(--scene-strength);transform:translateY(var(--drift,0px)) scale(1.08);mask-image:linear-gradient(90deg,#0009,transparent 38%,transparent 62%,#000)}
+.scene-atmosphere:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 10%,var(--scene-base) 100%);opacity:.35}
+.scene-runway{position:relative;padding-bottom:clamp(180px,32vh,380px);isolation:isolate}
+body.motion-site .scene-runway>.motion-hero{position:sticky;top:var(--stage-top,0px);margin-bottom:0}
+.scene-dissolve{position:absolute;bottom:-1px;left:0;right:0;height:clamp(180px,32vh,380px);pointer-events:none;z-index:10;background:linear-gradient(180deg,transparent,var(--scene-base) 98%)}
+body.motion-site main> :is(.section,.project-section,.history-section,.proof-bar,.belief,.join-section){background:transparent!important;position:relative}
+body.motion-site main>.scene-runway~ :is(.section,.project-section,.proof-bar,.belief){border-color:color-mix(in srgb,var(--world-accent,#87ddcd) 16%,transparent)}
+body.motion-site main> :is(#project,#perspective,#about,#next,#join):before{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--scene-base) 80%,transparent) 22%,color-mix(in srgb,var(--scene-base) 80%,transparent) 75%,transparent)}
+body.motion-site #join{padding-top:160px!important;padding-bottom:140px!important;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--scene-base) 45%,transparent))!important}
+html[data-mode=cloud] .scene-atmosphere:before{background-position:65% center;mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000)}
+html[data-mode=mindora] .scene-atmosphere:before{background-position:70% center;mask-image:linear-gradient(90deg,transparent 30%,#000)}
+html[data-mode=frontier] .scene-atmosphere:before{background-size:auto 110%;background-position:right center;background-repeat:no-repeat;mask-image:linear-gradient(90deg,transparent 55%,#000)}
+@media(max-width:800px){.scene-runway{padding-bottom:160px}.scene-dissolve{height:200px}.scene-atmosphere:before{opacity:calc(var(--scene-strength)*.7);mask-image:linear-gradient(90deg,#000,transparent 30%,transparent 70%,#000)}body.motion-site #join{padding-block:85px!important}}
+@media(prefers-reduced-motion:reduce){body.motion-site .scene-runway>.motion-hero{position:relative;top:0}.scene-runway{padding-bottom:100px}.scene-dissolve{height:140px}.scene-atmosphere:before{transform:none}}
+body.motion-paused .scene-runway>.motion-hero{position:relative;top:0}body.motion-paused .scene-runway{padding-bottom:100px}
+
+body.motion-site .scene-runway{padding-bottom:0}
