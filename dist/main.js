@@ -80,7 +80,7 @@ async function loadContent() {
   document.querySelector('#voices-grid').innerHTML = data.voices.map(item => `<figure class="voice-card"><span class="voice-label">${escapeHTML(item.label)}</span><blockquote>“${escapeHTML(item.quote)}”</blockquote><figcaption><span>${escapeHTML(item.author)} 님</span><a href="${safeLink(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(item.author)} 님 후기 원문, 새 창">후기 원문 ↗</a></figcaption></figure>`).join('');
   document.querySelector('#next-grid').innerHTML = data.next.map(item => `<article class="next-card"><span class="badge">${escapeHTML(item.status)}</span><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p><small>${escapeHTML(item.detail)}</small></article>`).join('');
 }
-loadContent().catch(() => {
+loadContent().then(() => document.dispatchEvent(new Event('content-ready'))).catch(() => {
   for (const id of ['timeline', 'gallery', 'works-grid', 'next-grid', 'activities-grid', 'voices-grid']) {
     const element = document.getElementById(id);
     if (!element.hasChildNodes()) element.innerHTML = '<p class="load-error">내용을 불러오지 못했습니다. 페이지를 새로고침해 주세요.</p>';
