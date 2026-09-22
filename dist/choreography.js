@@ -2,7 +2,7 @@ import * as T from './vendor/three.module.min.js';
 import {Reflector} from './vendor/Reflector.js';
 import {mergeGeometries} from './vendor/BufferGeometryUtils.js';
 const root=document.documentElement,hero=document.querySelector('.motion-hero'),host=document.querySelector('#live-stage');
-const editions=['ayush','axle','mindora','frontier'];
+const editions=['ayush','mindora','frontier'];
 let renderTime=0;
 let renderer,active,mode='',elapsed=0,last=0,raf=0,visible=true,view=0,viewMix=0,scroll=0;
 const pointer={x:0,y:0},smooth={x:0,y:0};const cache=new Map();const reduced=matchMedia('(prefers-reduced-motion: reduce)');
