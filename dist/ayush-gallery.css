@@ -1,0 +1,46 @@
+.ayush-gallery{display:none}
+html[data-mode=ayush]{--world-bg:#0a101b;--world-surface:#131d2b;--world-text:#ecece9;--world-muted:#a8b1be;--world-accent:#eeb382;--world-secondary:#8499bf;--world-edge:#9cb1d02e;--world-radius:4px}
+html[data-mode=ayush] .motion-site .motion-hero{display:block!important;min-height:800px!important;height:calc(100svh - 140px)!important;max-height:none!important;margin:0!important;width:100%!important;padding:0!important;border-radius:0!important;background:#0a101b!important;overflow:hidden;isolation:isolate}
+html[data-mode=ayush] .motion-hero>:is(.hero-copy,.scene-ui,.edition-scene,.city-console,.world-signature,.hero-coordinates,.edition-art-credit,#live-stage,#light-paths,.hero-halo){display:none!important}
+html[data-mode=ayush] .ayush-gallery{position:absolute;inset:0;display:block;color:#eeece8}
+.ayush-art{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#0a101b}.ayush-art img,.ayush-art video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.ayush-art video{opacity:0;transition:opacity 1.5s}.ayush-video-ready .ayush-art video{opacity:1}
+.ayush-shade{position:absolute;inset:0;background:linear-gradient(90deg,#060d17c9,transparent 65%),linear-gradient(0deg,#070e18ed,transparent 34%)}
+.ayush-top{position:absolute;left:4.5%;right:4.5%;top:34px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#afbac9;letter-spacing:.1em}.ayush-top i{font-style:normal;margin:0 15px;color:#6e829c}.ayush-top>span:last-child{font-size:10px;letter-spacing:.16em}
+.ayush-manifesto{position:absolute;top:16%;left:6%;width:49%;max-width:740px}.ayush-kicker{font-size:10px;letter-spacing:.18em;color:#d8b494;margin:0 0 25px}
+html[data-mode=ayush] .motion-site .ayush-manifesto h2{font-family:inherit;font-size:clamp(48px,5.2vw,80px);line-height:1.13;letter-spacing:-.065em;font-weight:450;margin:0;color:#f1efeb}.ayush-manifesto h2 em{font-family:Georgia,'Batang',serif;font-weight:400;font-style:normal;color:#e6b894;line-height:1.28}
+.ayush-description{font-size:15px;line-height:1.85;font-weight:400;color:#bdc5d0;margin:24px 0 24px}
+.ayush-enter{display:inline-flex;align-items:center;gap:40px;color:#f1e6d8;border-bottom:1px solid #d7af8388;padding:12px 0;font-size:14px;transition:gap .4s,color .4s}.ayush-enter span{font-size:24px;line-height:1}.ayush-enter:hover{gap:60px;color:#ffd3a7}
+.ayush-art-caption{position:absolute;right:4.5%;bottom:155px;text-align:right;display:flex;flex-direction:column;gap:14px;color:#d8dee5}.ayush-art-caption>span{font-family:Georgia,'Batang',serif;font-size:19px;line-height:1.6}.ayush-art-caption>small{font-size:10px;letter-spacing:.03em;color:#96a7bd}
+.ayush-record{position:absolute;bottom:0;left:4.5%;right:4.5%;display:grid;grid-template-columns:1fr 1.1fr 1fr .8fr;border-top:1px solid #a1b0c342;min-height:106px}
+.ayush-record>a{display:flex;align-items:center;gap:20px;padding:25px 0;color:#d7dce3}.ayush-record strong{font-family:Georgia,serif;font-size:43px;line-height:1;font-weight:400;letter-spacing:-.04em;color:#edb58b}.ayush-record>a>span{font-size:12px;line-height:1.7;color:#a9b5c4}.ayush-record .ayush-scroll{justify-content:flex-end;font-size:12px;gap:30px}.ayush-scroll span{font-size:24px!important}
+.ayush-entering .ayush-manifesto{animation:ayush-reveal 1.3s cubic-bezier(.2,.8,.2,1) both}.ayush-entering .ayush-record{animation:ayush-reveal 1.2s .15s both}@keyframes ayush-reveal{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+html[data-mode=ayush] .motion-site :is(.site-header,.mode-dock){background:#0a101bf2!important}
+html[data-mode=ayush] .motion-site .mode-options button[aria-pressed=true]{background:#c59772;color:#101621}
+html[data-mode=ayush] .motion-site .mode-options button[aria-pressed=true] :is(span,i){color:#101621!important}
+html[data-mode=ayush] .motion-site .dark{background:#192434!important;color:#e4e8ed!important;border:1px solid #6679934d}
+html[data-mode=ayush] .motion-site .kinetic-strip{background:#111d2e;padding:28px 0;border-color:#8194ac36;transform:none;margin:0;border-radius:0}
+html[data-mode=ayush] .motion-site .kinetic-strip>div{font-weight:350;letter-spacing:-.025em;color:#bcc7d8}html[data-mode=ayush] .motion-site .kinetic-strip b{font-weight:300}
+html[data-mode=ayush] .motion-site .project-section{background:radial-gradient(ellipse at 90% 15%,#14284380,transparent 45%),#0a101b}
+html[data-mode=ayush] .motion-site .project-stats{gap:1px;border:1px solid #8498b22c;background:#8498b22c;border-radius:0}
+html[data-mode=ayush] .motion-site .project-stats article{background:#111b29!important;border:0;border-radius:0;padding:35px;box-shadow:none;transform:none!important}
+html[data-mode=ayush] .motion-site .project-stats article>strong{font-family:Georgia,serif;font-size:94px;font-weight:400}
+html[data-mode=ayush] .motion-site .project-method{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+html[data-mode=ayush] .motion-site .method-heading{display:block;position:sticky;top:160px;align-self:start}
+html[data-mode=ayush] .motion-site .method-heading .experiment-art{transform:none;margin-top:30px;max-height:none}
+html[data-mode=ayush] .motion-site .experiment-steps{display:block}
+html[data-mode=ayush] .motion-site .experiment-steps li{background:transparent;border:0;border-bottom:1px solid #9aaac333;border-radius:0;box-shadow:none;padding:30px 22px;transform:none!important}
+html[data-mode=ayush] .motion-site .experiment-steps li.is-current{background:#14253a}
+html[data-mode=ayush] .motion-site .step-index{margin:0 0 18px;background:#293c54;color:#e6c5a4;border:1px solid #8195ae44;border-radius:0}
+html[data-mode=ayush] .motion-site :is(.work-card,.people-panel,.activity-card,.voice-card,.cohort-card){background:#111c2a;border:1px solid #8c9bb52e;border-radius:6px;box-shadow:none;transform:none}
+html[data-mode=ayush] .motion-site .demo-moment{background:#142033;border-color:#8396b030}
+html[data-mode=ayush] .motion-site .demo-layout figure{transform:none;box-shadow:none;border-radius:5px}
+html[data-mode=ayush] .motion-site .work-card:nth-child(2){transform:none}
+html[data-mode=ayush] .motion-site .works-grid{padding-bottom:0}
+html[data-mode=ayush] .motion-site .profession-list li{background:#1c2b3e;color:#cfdae5;border-color:#7a8da13b}
+html[data-mode=ayush] .motion-site .belief{background:linear-gradient(120deg,#162a41,#0b1525);border-radius:0}
+html[data-mode=ayush] .motion-site :is(.proof-caption,.stat-label,.project-credit,.micro-definition span,.project-bridge span,.stat p){color:#abb9c8}
+html[data-mode=ayush] .motion-site .micro-definition{background:#152237;border-color:#8396b02e}
+@media(max-width:800px){html[data-mode=ayush] .motion-site .motion-hero{height:1060px!important;min-height:1060px!important}.ayush-top{left:25px;right:25px;top:28px;font-size:11px}.ayush-top>span:last-child{display:none}.ayush-manifesto{top:104px;left:26px;right:24px;width:auto}.ayush-kicker{font-size:9px;margin-bottom:24px}html[data-mode=ayush] .motion-site .ayush-manifesto h2{font-size:47px;line-height:1.16}.ayush-description{font-size:14px;margin-top:21px}.ayush-enter{font-size:13px;padding-top:5px}.ayush-art{inset:320px -130px 125px -180px}.ayush-art img,.ayush-art video{object-position:70% center}.ayush-shade{background:linear-gradient(180deg,#0a101b,transparent 42%,#0a101b22 75%,#0a101b)}.ayush-art-caption{bottom:208px;right:24px}.ayush-art-caption>span{font-size:16px}.ayush-art-caption small{font-size:9px}.ayush-record{left:24px;right:24px;grid-template-columns:repeat(3,1fr);min-height:158px}.ayush-record>a{gap:8px;align-items:flex-start;flex-direction:column;padding:20px 0 10px}.ayush-record strong{font-size:34px}.ayush-record>a>span{font-size:9px}.ayush-record .ayush-scroll{grid-column:1/-1;flex-direction:row;align-items:center;padding:5px 0 15px;font-size:11px}.ayush-scroll span{font-size:17px!important}html[data-mode=ayush] .motion-site .project-method{grid-template-columns:1fr;gap:35px}html[data-mode=ayush] .motion-site .method-heading{position:static}html[data-mode=ayush] .motion-site .project-stats article{padding:25px}html[data-mode=ayush] .motion-site .project-stats article>strong{font-size:76px}}
+@media(prefers-reduced-motion:reduce){.ayush-entering *{animation:none!important;transition:none!important}}.motion-paused .ayush-entering *{animation:none!important}
+
