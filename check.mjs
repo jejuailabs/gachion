@@ -2,7 +2,7 @@ import { readFile, access, readdir } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const html = await readFile(new URL('./dist/index.html', import.meta.url), 'utf8');
 const data = JSON.parse(await readFile(new URL('./dist/data.json', import.meta.url), 'utf8'));
-const paths = [...html.matchAll(/(?:src|href)="([^"#:]+\.(?:webp|css|js))"/g)].map(m => m[1]);
+const paths = [...html.matchAll(/(?:src|href)="([^"#:]+\.(?:webp|png|css|js))"/g)].map(m => m[1]);
 paths.push(...data.gallery.map(x => x.image), ...data.works.filter(x => x.image).map(x => x.image));
 await Promise.all(paths.map(path => access(new URL('./dist/' + path, import.meta.url))));
 const ids = [...html.matchAll(/id="([^"]+)"/g)].map(m => m[1]);
