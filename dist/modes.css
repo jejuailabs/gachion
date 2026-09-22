@@ -1,0 +1,69 @@
+/* Same story, five complete visual worlds. Fixed geometry preserves reading position. */
+html{scroll-padding-top:160px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.mode-dock{border-top:1px solid #ffffff14;background:#080f1377}.mode-dock-inner{max-width:1440px;padding:9px 32px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.mode-label{font-size:9px;letter-spacing:.16em;color:#99aaa3;white-space:nowrap}.mode-options{display:flex;gap:7px}.mode-options button{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:30px;background:transparent;color:#adbbb6;padding:8px 13px;min-height:40px;font-size:11px;white-space:nowrap;transition:background .3s,color .3s,border-color .3s}.mode-options i{font-style:normal;font-size:17px;line-height:1}.mode-options button:hover{background:#ffffff0d;color:#fff}.mode-options button[aria-pressed=true]{color:var(--world-accent,#f3cc90);border-color:var(--world-accent,#f3cc90);background:#ffffff08}.world-signature{position:absolute;left:50%;bottom:105px;transform:translateX(-50%);display:flex;gap:15px;align-items:center;white-space:nowrap;font-size:10px;letter-spacing:.08em;color:var(--world-accent,#e5c496)}#world-number{padding:4px 9px;border:1px solid currentColor;border-radius:3px}.world-switch main{animation:world-arrive .65s ease both}@keyframes world-arrive{from{filter:brightness(.72) saturate(.6)}to{filter:brightness(1) saturate(1)}}
+html[data-mode=aurora]{--world-accent:#aaf3df;--world-secondary:#e4acfd;--world-bg:#101029;--world-surface:#221c4077;--world-edge:#b5a6f344;--world-text:#f3efff;--world-muted:#bbb7d2;--world-radius:25px}
+html[data-mode=cosmos]{--world-accent:#d4b3ff;--world-secondary:#94ccff;--world-bg:#090817;--world-surface:#17162c;--world-edge:#9785d344;--world-text:#f4f0ff;--world-muted:#b9b1cb;--world-radius:22px}
+html[data-mode=lab]{--world-accent:#c2ff4c;--world-secondary:#f4f8e9;--world-bg:#111811;--world-surface:#182118;--world-edge:#a5c67955;--world-text:#eff6e9;--world-muted:#bac7b0;--world-radius:0px}
+html[data-mode=cinema]{--world-accent:#e9bb82;--world-secondary:#eedbc2;--world-bg:#171210;--world-surface:#251b17;--world-edge:#b08e6855;--world-text:#f5ecdf;--world-muted:#c5b8a9;--world-radius:3px}
+html:not([data-mode=light]) .motion-site{--paper:var(--world-bg);--ink:var(--world-text);--teal:var(--world-accent);--muted:var(--world-muted);--line:var(--world-edge);background:var(--world-bg);color:var(--world-text)}
+html:not([data-mode=light]) .motion-site :is(.site-header,.mode-dock,footer){background:var(--world-bg);border-color:var(--world-edge)}
+html:not([data-mode=light]) .motion-site :is(.project-section,.history-section,.learning-section,.join-section,.demo-moment,.belief){background:var(--world-bg);color:var(--world-text);border-color:var(--world-edge)}
+html:not([data-mode=light]) .motion-site :is(.proof-bar,.kinetic-strip){background:var(--world-surface);border-color:var(--world-edge)}
+html:not([data-mode=light]) .motion-site :is(.project-stats article,.work-card,.people-panel,.activity-card,.voice-card,.cohort-card,.impact-invitation){background:var(--world-surface);border-color:var(--world-edge);border-radius:var(--world-radius)}
+html:not([data-mode=light]) .motion-site :is(.project-heading h2 em,.project-stats article>strong,.stat>strong,.moment-copy h3 span,.belief h2,.cohort-intro h3 span,.step-phase,.step-result,.eyebrow,.voice-label,.activity-top,.work-category,.profession-list li,.impact-grid article>span){color:var(--world-accent)}
+html:not([data-mode=light]) .motion-site :is(.project-heading>p,.project-stats p,.experiment-steps p,.method-heading>p:last-child,.impact-grid p,.impact-invitation p,.join-grid p,.join-lead,.hero-description){color:var(--world-muted)}
+html:not([data-mode=light]) .motion-site :is(.button.orange,.step-index,.is-current .step-index){background:var(--world-accent);color:var(--world-bg);box-shadow:0 0 30px #ffffff0a}
+html:not([data-mode=light]) .motion-site :is(.button,.photo-button,.demo-layout img,.experiment-art,.experiment-art img,.community-story img){border-radius:var(--world-radius)}
+html:not([data-mode=light]) .motion-site .light-title{background-image:linear-gradient(110deg,var(--world-accent),var(--world-secondary),var(--world-accent))}
+html:not([data-mode=light]) .motion-site .reading-progress{background:linear-gradient(90deg,var(--world-accent),var(--world-secondary))}
+html:not([data-mode=light]) .motion-site .motion-hero{background:var(--world-bg)}
+html:not([data-mode=light]) .motion-site .hero-halo{background:var(--world-bg)}
+html:not([data-mode=light]) .motion-site .motion-hero:after{background:linear-gradient(180deg,transparent 50%,var(--world-bg))}
+html:not([data-mode=light]) .motion-site .experiment-steps li.is-current{border-color:var(--world-accent);background:var(--world-surface)}
+html:not([data-mode=light]) .motion-site :is(.brand-on,.brand-dot){color:var(--world-accent)}
+html:not([data-mode=light]) .motion-site .brand-dot{background:var(--world-accent)}
+/* Aurora: drifting color curtains and frosted surfaces all the way down. */
+html[data-mode=aurora] .motion-site :is(.project-section,.history-section,.join-section,.demo-moment){background-image:radial-gradient(ellipse at 5% 35%,#7458ca35,transparent 50%),radial-gradient(ellipse at 100% 90%,#28ad9624,transparent 55%)}
+html[data-mode=aurora] .motion-site :is(.work-card,.project-stats article,.voice-card,.people-panel,.cohort-card){background:linear-gradient(135deg,#adc4ff12,#c692ef15 45%,#85f2df0a);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 #ffffff22,0 15px 45px #05031635}
+html[data-mode=aurora] .motion-site .kinetic-strip{background:linear-gradient(100deg,#283b48,#3c2359,#243c47);background-size:200%;animation:aurora-color 18s ease infinite}
+html[data-mode=aurora] .motion-site :is(.photo-button,.experiment-art,.demo-layout figure){box-shadow:0 15px 60px #a980ed19}
+html[data-mode=aurora] .motion-site .experiment-steps li{border-left:2px solid #a1d6cd33}
+@keyframes aurora-color{50%{background-position:100% 50%}}
+/* Cosmos: constellations, orbital framing and depth. */
+html[data-mode=cosmos] .motion-site :is(.project-section,.history-section,.join-section,.demo-moment){background-image:radial-gradient(circle,#d3b8ff55 1px,transparent 1.5px),radial-gradient(ellipse at 80% 15%,#55417c25,transparent 55%);background-size:87px 113px,100% 100%}
+html[data-mode=cosmos] .motion-site .project-stats article{position:relative;overflow:hidden;border-radius:50% 50% 20px 20px;padding-top:45px;padding-bottom:27px;text-align:center;box-shadow:inset 0 0 45px #9886d817}
+html[data-mode=cosmos] .motion-site .project-stats article:after{content:'';position:absolute;inset:18px;border:1px solid #d6bdff15;border-radius:50%;pointer-events:none;transform:rotate(-25deg)}
+html[data-mode=cosmos] .motion-site .step-index{border-radius:50%;box-shadow:0 0 25px #ac82ff44}
+html[data-mode=cosmos] .motion-site .work-card{box-shadow:0 0 0 5px #6f599a0a,0 20px 50px #0005}
+html[data-mode=cosmos] .motion-site .belief{background:radial-gradient(ellipse,#60468955,transparent 70%),var(--world-bg)}
+html[data-mode=cosmos] .motion-site .photo-button{border:1px solid #bc9df14a}
+/* Lab: high contrast poster typography and sharp technical framing. */
+html[data-mode=lab] .motion-site :is(.project-section,.join-section,.demo-moment){background-image:linear-gradient(#b9e2800b 1px,transparent 1px),linear-gradient(90deg,#b9e2800b 1px,transparent 1px);background-size:40px 40px}
+html[data-mode=lab] .motion-site :is(.hero-copy h1,.project-heading h2,.section-heading h2,.project-impact>h3,.moment-copy h3){font-weight:850;letter-spacing:-.065em}
+html[data-mode=lab] .motion-site .kinetic-strip{background:#c2ff4c}.motion-site .kinetic-strip{transition:background .3s}html[data-mode=lab] .kinetic-strip :is(span,b){color:#111811}
+html[data-mode=lab] .motion-site .project-stats article{background:#d0ff67;color:#14200a;border:1px solid #121a0d;box-shadow:7px 7px 0 #739c35;transform-style:flat}
+html[data-mode=lab] .motion-site .project-stats :is(.stat-label,p,article>strong){color:#14200a}
+html[data-mode=lab] .motion-site :is(.work-card,.activity-card,.voice-card,.cohort-card,.people-panel){border:1px solid #b0cb8055;box-shadow:5px 5px 0 #6c86312a}
+html[data-mode=lab] .motion-site .work-preview{filter:grayscale(.65)}
+html[data-mode=lab] .motion-site .experiment-steps li.is-current{background:#c2ff4c12;border-left-width:4px}
+html[data-mode=lab] .motion-site .eyebrow{font-family:Consolas,monospace;letter-spacing:.1em}
+html[data-mode=lab] .motion-site .belief{border-block:3px solid #c2ff4c}
+/* Cinema: a full-bleed documentary frame and warm editorial surfaces. */
+html[data-mode=cinema] .motion-site .motion-hero:before{content:'';position:absolute;inset:0;z-index:-3;background:linear-gradient(90deg,#090605a6,#09060580),url('assets/hero.webp') center/cover;animation:film-drift 24s ease-in-out infinite alternate}
+html[data-mode=cinema] .motion-site .motion-hero{background:transparent}
+html[data-mode=cinema] .motion-site .hero-halo{opacity:.25}
+html[data-mode=cinema] .motion-site :is(.hero-copy h1,.moment-copy h3,.section-heading h2){font-family:Georgia,'Batang','바탕',serif;font-weight:500;letter-spacing:-.055em}
+html[data-mode=cinema] .motion-site :is(.project-section,.history-section,.join-section){background-image:linear-gradient(90deg,#0002,transparent 15%,transparent 85%,#0002)}
+html[data-mode=cinema] .motion-site .kinetic-strip{border-top:7px solid #0009;border-bottom:7px solid #0009;background:#36281d}
+html[data-mode=cinema] .motion-site :is(.demo-layout figure,.gallery-feature,.experiment-art){border-block:12px solid #080605;background:#080605;box-shadow:0 24px 70px #0007}
+html[data-mode=cinema] .motion-site :is(.photo-button img,.demo-layout img){filter:sepia(.18) saturate(.82);transition:filter .7s,transform 1s}
+html[data-mode=cinema] .motion-site .photo-button:hover img{filter:none;transform:scale(1.045)}
+html[data-mode=cinema] .motion-site .project-stats article{background:linear-gradient(135deg,#32241a,#1b1511);border-top:2px solid #ddb789}
+html[data-mode=cinema] .motion-site .voice-card{border-top:1px solid #bb9262;background:#211914}
+html[data-mode=cinema] .motion-site .belief{background:radial-gradient(ellipse at 50% 100%,#ad703633,transparent 70%),#171210}
+@keyframes film-drift{from{transform:scale(1)}to{transform:scale(1.06)}}
+@media(max-width:1100px){.mode-label{display:none}.mode-dock-inner{justify-content:center}.mode-options{width:100%;justify-content:center}}
+@media(max-width:800px){html{scroll-padding-top:160px}.motion-site .site-header nav{top:72px;z-index:2}.mode-dock-inner{padding:7px 12px;overflow-x:auto;justify-content:flex-start}.mode-options{width:max-content;min-width:100%;justify-content:flex-start;gap:5px}.mode-options button{padding:7px 10px;font-size:10px;min-height:40px}.world-signature{font-size:9px;gap:10px;bottom:100px}html[data-mode=cosmos] .motion-site .project-stats article{border-radius:22px;padding-top:27px}html[data-mode=cinema] .motion-site .motion-hero:before{background-position:56% center}}
+@media(max-width:520px){.mode-options button{flex-direction:column;gap:4px;font-size:9px;padding:6px 9px;min-width:78px}.mode-options button i{font-size:16px}.mode-dock-inner{padding:6px 10px}.world-signature{font-size:8px;letter-spacing:0;white-space:normal;width:90%;justify-content:center}.world-signature #world-number{white-space:nowrap}html[data-mode=cosmos] .motion-site .project-stats article{text-align:left;padding:23px}html[data-mode=cosmos] .motion-site .project-stats article:after{display:none}html[data-mode=cinema] .motion-site .hero-copy h1{font-size:clamp(32px,8.3vw,43px)}}
+@media(prefers-reduced-motion:reduce){.world-switch main{animation:none}.motion-site *,.motion-site *:before,.motion-site *:after{animation:none!important}}
+html:not([data-mode=light]) .motion-site .work-preview .eyebrow{color:#274638}html[data-mode=aurora] .motion-enabled .reveal:not(.is-visible){transform:translateY(32px) scale(.98)}html[data-mode=cosmos] .motion-enabled .reveal:not(.is-visible){transform:translateY(24px) scale(.94)}html[data-mode=lab] .motion-enabled .reveal:not(.is-visible){transform:translateX(-25px);transition-duration:.45s}html[data-mode=cinema] .motion-enabled .reveal:not(.is-visible){transform:translateY(25px);transition-duration:1.2s}.motion-paused .reveal:not(.is-visible){transform:none!important}@media(prefers-reduced-motion:reduce){html .motion-enabled .reveal:not(.is-visible){transform:none!important}}
+@media(min-width:801px){.motion-site .method-heading{top:170px}}
