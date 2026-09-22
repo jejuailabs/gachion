@@ -6,6 +6,47 @@
   const canvas = document.querySelector('#axle-traffic');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  // Only sky and wet paving move: architecture, rails, and independently drawn trams stay stable.
+  const ambientCanvas = document.querySelector('#axle-ambient');
+  const gl = ambientCanvas.getContext('webgl', { alpha: false, antialias: false, powerPreference: 'low-power' });
+  let ambientProgram, ambientTexture, ambientReady = false;
+  const city = document.querySelector('.axle-city-image');
+  function initAmbient() {
+    if (!gl || !city.complete || !city.naturalWidth || ambientReady) return;
+    try {
+      const compile = (type, source) => { const shader = gl.createShader(type); gl.shaderSource(shader, source); gl.compileShader(shader); if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error('Ambient shader'); return shader; };
+      const vertex = compile(gl.VERTEX_SHADER, 'attribute vec2 p; varying vec2 uv; void main(){uv=p*.5+.5;gl_Position=vec4(p,0.,1.);}');
+      const fragment = compile(gl.FRAGMENT_SHADER, `precision mediump float;
+        varying vec2 uv; uniform sampler2D image; uniform vec2 size; uniform float time;
+        void main(){
+          vec2 source=vec2(1536.,1024.); float cover=max(size.x/source.x,size.y/source.y);
+          vec2 q=(vec2(uv.x,1.-uv.y)*size-(size-source*cover)*.5)/(source*cover);
+          float cloud=(1.-smoothstep(.12,.30,q.y))*smoothstep(.10,.27,q.x)*(1.-smoothstep(.72,.90,q.x));
+          vec2 shift=vec2(sin(time*.11+q.y*8.)*.004,cos(time*.13+q.x*7.)*.0013)*cloud;
+          float water=smoothstep(.505,.555,q.y);
+          float rail=1.-.97*max(1.-smoothstep(.001,.011,abs(q.y-.675)),1.-smoothstep(.001,.011,abs(q.y-.757)));
+          shift.x+=sin(q.y*350.+time*.95+sin(q.x*13.))*0.00065*water*rail;
+          shift.y+=sin(q.x*33.+time*.65+q.y*85.)*.00030*water*rail;
+          vec3 c=texture2D(image,clamp(q+shift,0.,1.)).rgb;
+          float warm=smoothstep(.025,.16,c.r-c.b)*water;
+          c+=warm*.012*sin(q.y*230.-time*.8+q.x*9.);
+          gl_FragColor=vec4(c,1.);
+        }`);
+      ambientProgram=gl.createProgram(); gl.attachShader(ambientProgram,vertex); gl.attachShader(ambientProgram,fragment); gl.linkProgram(ambientProgram);
+      if(!gl.getProgramParameter(ambientProgram,gl.LINK_STATUS))throw new Error('Ambient program');
+      gl.useProgram(ambientProgram);
+      const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+      const position=gl.getAttribLocation(ambientProgram,'p');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
+      ambientTexture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,ambientTexture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,city);
+      ambientReady=true;
+    } catch { ambientCanvas.style.display='none'; }
+  }
+  function drawAmbient(){
+    if(!ambientReady)return;
+    gl.useProgram(ambientProgram);gl.viewport(0,0,ambientCanvas.width,ambientCanvas.height);
+    gl.uniform2f(gl.getUniformLocation(ambientProgram,'size'),width,height);gl.uniform1f(gl.getUniformLocation(ambientProgram,'time'),elapsed);gl.drawArrays(gl.TRIANGLES,0,6);
+  }
+  city.addEventListener('load',()=>{initAmbient();drawAmbient();});
   const tram = new Image();
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const buttons = [...document.querySelectorAll('[data-axle-stop]')];
@@ -44,6 +85,7 @@
     ctx.restore();
   }
   function draw() {
+    drawAmbient();
     ctx.clearRect(0, 0, width, height);
     if (tram.complete && tram.naturalWidth) {
       vehicle(2136 - ((elapsed * 86 + 850) % 2736), 692, 355, -1);
@@ -71,6 +113,7 @@
     width = bounds.width; height = bounds.height;
     const dpr = Math.min(devicePixelRatio || 1, 1.5);
     canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    ambientCanvas.width=canvas.width;ambientCanvas.height=canvas.height;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw();
   }
   function select() {
@@ -78,6 +121,7 @@
     hero.setAttribute('aria-labelledby', active ? 'axle-title' : 'hero-title');
     if (active) {
       if (!tram.src) tram.src = 'assets/axle-tram.png';
+      initAmbient();
       scene.classList.add('axle-arrive'); resize();
     } else scene.classList.remove('axle-arrive');
     reconcile();
