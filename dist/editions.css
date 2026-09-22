@@ -1,0 +1,163 @@
+/* Four spatial editions. Shared content, different composition and reading rhythm. */
+.mode-label{display:none}.mode-dock-inner{padding-inline:20px;justify-content:center}.mode-options{overflow-x:auto;max-width:100%;scrollbar-width:thin}.mode-options button{padding:8px 11px;flex-shrink:0}.edition-scene,.city-console,.edition-art-credit{display:none}
+html[data-mode=ayush]{--world-accent:#6740aa;--world-secondary:#e074aa;--world-bg:#eeeaff;--world-surface:#ffffffb8;--world-edge:#937ecb50;--world-text:#26213d;--world-muted:#655c7e;--world-radius:26px}
+html[data-mode=axle]{--world-accent:#aa4317;--world-secondary:#c57d39;--world-bg:#dce0e1;--world-surface:#f2f4f4;--world-edge:#7a888d60;--world-text:#222d32;--world-muted:#506168;--world-radius:14px}
+html[data-mode=mindora]{--world-accent:#34655c;--world-secondary:#6b8c83;--world-bg:#f5f8f6;--world-surface:#fff;--world-edge:#829d9138;--world-text:#223b33;--world-muted:#5a6e66;--world-radius:36px}
+html[data-mode=frontier]{--world-accent:#f6ad60;--world-secondary:#f5a3c5;--world-bg:#050505;--world-surface:#151315;--world-edge:#75626766;--world-text:#fbf5ef;--world-muted:#bfb4b9;--world-radius:80px 80px 8px 8px}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site :is(.hero-halo,#light-paths,.motion-hero:after){display:none}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .edition-scene{display:block;position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.scene-image{position:absolute;inset:0;background-size:cover;background-position:center}.edition-word,.city-reticle,.glass-orbit,.bloom-pollen{display:none}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .motion-hero h1{color:var(--world-text);text-shadow:none}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .light-title{background:none;color:inherit;animation:none}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .edition-art-credit{display:block;position:absolute;bottom:8px;right:20px;font-size:9px;color:var(--world-muted);z-index:2}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site :is(.brand,.site-header nav a,.dark,.text-link,.back-top,#motion-toggle,.hero-note,.hero-coordinates,.hero-description,.mode-options button){color:var(--world-text)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site :is(.moment-copy p,.moment-source,.belief p,.photo-caption,.gallery-grid figcaption,.cohort-details dt,.cohort-details dd small,.week-flow b,.next-card small,.section-footnote,.timeline-item>span){color:var(--world-muted)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site :is(.dark,.profession-list li,.badge){background:#ffffff90;border-color:var(--world-edge);color:var(--world-accent)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site :is(.stat,.join-grid>a,.cohort-intro,.impact-grid article){border-color:var(--world-edge)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site .menu-toggle span{background:var(--world-text)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site .site-header nav{background:var(--world-bg)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site .mode-options button[aria-pressed=true]{background:var(--world-accent);color:#fff}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site :is(.kinetic-strip>div,.kinetic-strip b){color:var(--world-accent)}
+/* AYUSH — sky, oversized type and floating studio sheets. */
+html[data-mode=ayush] .motion-site .motion-hero{height:950px;min-height:950px;padding-top:45px;background:#3479eb}
+html[data-mode=ayush] .scene-image{background-image:url('assets/ayush-studio.png');animation:sky-drift 18s ease-in-out infinite alternate}
+html[data-mode=ayush] .motion-site .hero-copy{align-self:flex-start;width:100%;max-width:1100px}
+html[data-mode=ayush] .motion-site .motion-hero h1{font-family:Georgia,'Batang',serif;font-size:clamp(38px,4vw,62px);font-weight:500;color:#fff;letter-spacing:-.06em;text-shadow:0 2px 18px #15488755}
+html[data-mode=ayush] .motion-site .hero-copy>.eyebrow{color:#fff;margin-bottom:16px}
+html[data-mode=ayush] .motion-site .hero-description{font-size:15px;color:#fff;margin-top:15px}
+html[data-mode=ayush] .motion-site .hero-buttons{margin-top:16px;gap:22px}
+html[data-mode=ayush] .motion-site .hero-buttons .text-link{color:white}
+html[data-mode=ayush] .motion-site .hero-note{display:none}
+html[data-mode=ayush] .edition-word{display:block;position:absolute;top:40%;left:2%;font-size:clamp(100px,18vw,290px);font-weight:900;line-height:.8;letter-spacing:-.07em;color:#ffffff38;white-space:nowrap;mix-blend-mode:soft-light}
+html[data-mode=ayush] .edition-word br{display:none}
+html[data-mode=ayush] .world-signature{bottom:65px;background:#ffffffc9;padding:14px 23px;border-radius:50px;backdrop-filter:blur(20px);box-shadow:0 15px 40px #5c408744}
+html[data-mode=ayush] .motion-site .hero-coordinates{color:#38264f}
+html[data-mode=ayush] .motion-site .project-stats article{box-shadow:0 25px 45px #7864b321;border:1px solid #fff;transform:rotate(-2deg)}
+html[data-mode=ayush] .motion-site .project-stats article:nth-child(2){transform:translateY(28px) rotate(2deg);background:#fcddeb}
+html[data-mode=ayush] .motion-site .project-stats article:nth-child(3){background:#d8f4ec;transform:rotate(-2deg)}
+html[data-mode=ayush] .motion-site .project-method{display:block;margin-top:130px}
+html[data-mode=ayush] .motion-site .method-heading{position:static;display:grid;grid-template-columns:1fr 1fr;gap:12px 60px;margin-bottom:45px}
+html[data-mode=ayush] .method-heading .experiment-art{grid-column:2;grid-row:1 / 4;margin:0;max-height:330px;transform:rotate(3deg)}
+html[data-mode=ayush] .experiment-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+html[data-mode=ayush] .motion-site .experiment-steps li{display:block;background:#ffffffa6;border:1px solid #fff;border-radius:24px;padding:28px;box-shadow:0 15px 30px #8e78b51a}
+html[data-mode=ayush] .experiment-steps .step-index{margin-bottom:25px}.experiment-steps li{min-width:0}
+html[data-mode=ayush] .motion-site .demo-moment{background:linear-gradient(145deg,#ddd3fb,#fbe4ed)}
+html[data-mode=ayush] .motion-site .demo-layout{grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+html[data-mode=ayush] .demo-layout figure{transform:rotate(-3deg);box-shadow:15px 20px 0 #cfc1ee;border-radius:24px}
+html[data-mode=ayush] .motion-site .work-card:nth-child(2){transform:translateY(55px)}
+html[data-mode=ayush] .motion-site .works-grid{padding-bottom:55px}
+html[data-mode=ayush] .motion-site .belief{background:linear-gradient(120deg,#d1dbfc,#f7d9ed)}
+/* AXLE — city viewport, vertical console and compact dashboard panels. */
+html[data-mode=axle] .motion-site .motion-hero{margin:18px;width:calc(100% - 36px);height:800px;min-height:800px;padding:0 30px 0 280px;border-radius:24px;align-items:flex-start;background:#9ba8b2}
+html[data-mode=axle] .scene-image{background-image:linear-gradient(180deg,#22303d75,transparent 55%),url('assets/axle-city.png');animation:city-pan 28s ease-in-out infinite alternate}
+html[data-mode=axle] .city-console{display:flex;position:absolute;top:14px;left:14px;bottom:14px;width:235px;padding:26px 22px;flex-direction:column;gap:26px;background:#202a31ed;border:1px solid #ffffff50;border-radius:17px;color:#fff;backdrop-filter:blur(22px)}
+.console-label{font-size:9px;letter-spacing:.16em;color:#bdc9cd}.city-console>strong{font-size:25px;font-weight:500;line-height:1.6}.city-console a{padding-block:20px;border-block-start:1px solid #ffffff29;font-size:12px;display:flex;gap:10px}.city-console a b{color:#ef985d}.console-number{font-size:100px;line-height:1;margin-top:auto;color:#f39c66}.console-number span{display:block;font-size:8px;letter-spacing:.08em;margin-top:15px;color:#c0c9cd}
+html[data-mode=axle] .motion-site .hero-copy{margin-top:36px;text-align:left;padding:24px 30px;background:#e4e9eced;border:1px solid #ffffffa0;border-radius:18px;max-width:680px;margin-left:0;backdrop-filter:blur(20px)}
+html[data-mode=axle] .motion-site .hero-copy>.eyebrow{justify-content:flex-start;color:#526570;margin-bottom:15px}
+html[data-mode=axle] .motion-site .motion-hero h1{font-size:clamp(30px,3.1vw,46px);line-height:1.3;letter-spacing:-.055em}
+html[data-mode=axle] .motion-site .hero-description{font-size:14px;margin-top:16px}
+html[data-mode=axle] .motion-site .hero-buttons{justify-content:flex-start;margin-top:18px;gap:18px}
+html[data-mode=axle] .motion-site .hero-note{display:none}
+html[data-mode=axle] .city-reticle{display:block;position:absolute;inset:20px 20px 20px 265px;border:1px solid #ffffff60;border-radius:18px}
+html[data-mode=axle] .world-signature{left:auto;right:30px;bottom:45px;transform:none;background:#222b32dd;border:1px solid #ffffff55;border-radius:8px;color:#fff;padding:16px}
+html[data-mode=axle] .motion-site .hero-coordinates{display:none}html[data-mode=axle] .edition-art-credit{color:#fff}
+html[data-mode=axle] .motion-site .kinetic-strip{margin:18px;border-radius:12px;background:#263139;color:#fff;padding:12px 0}html[data-mode=axle] .motion-site .kinetic-strip>div{color:#d2dce1;font-size:17px}
+html[data-mode=axle] .motion-site .project-heading{display:grid;grid-template-columns:1.5fr 1fr;align-items:end;border-bottom:1px solid #84949c;padding-bottom:35px}
+html[data-mode=axle] .motion-site .project-stats{gap:12px}.motion-site .project-stats article{min-width:0}
+html[data-mode=axle] .motion-site .project-stats article{display:grid;grid-template-columns:1fr auto;gap:12px;padding:24px;border-top:4px solid #b36332}
+html[data-mode=axle] .project-stats article>strong{grid-column:2;grid-row:1 / 3}
+html[data-mode=axle] .motion-site .project-stats article>strong{font-size:85px}
+html[data-mode=axle] .motion-site .project-method{grid-template-columns:300px 1fr;gap:30px}
+html[data-mode=axle] .motion-site .experiment-steps li{border:1px solid #8c9aa050;border-radius:12px;background:#f3f5f5;margin-bottom:12px;padding:28px}
+html[data-mode=axle] .motion-site .demo-layout{grid-template-columns:1.5fr 1fr;gap:30px}
+html[data-mode=axle] .motion-site .demo-moment{margin:20px;border-radius:20px;background:#cbd2d5;padding-block:45px}
+html[data-mode=axle] .motion-site .people-panel{display:grid;grid-template-columns:1fr 1.6fr;gap:25px;border-left:6px solid #b2693d}
+html[data-mode=axle] .motion-site .works-grid{gap:14px}
+html[data-mode=axle] .motion-site .work-card{border-radius:12px;box-shadow:0 5px 0 #bdc5c8}
+html[data-mode=axle] .motion-site .belief{background:#26343c}html[data-mode=axle] .motion-site .belief h2{color:#f5b78d}html[data-mode=axle] .motion-site .belief p{color:#d1dce1}
+/* MINDORA — luminous sculpture, quiet split hero and expansive editorial layouts. */
+html[data-mode=mindora] .motion-site .motion-hero{height:800px;min-height:800px;margin:20px;width:calc(100% - 40px);padding:0;border-radius:40px;align-items:center;justify-content:flex-start;background:#edf4f1}
+html[data-mode=mindora] .scene-image{background-image:url('assets/mindora-glass.png');background-position:right center;background-size:auto 110%;animation:glass-breathe 14s ease-in-out infinite alternate}
+html[data-mode=mindora] .motion-site .hero-copy{margin-left:25px;width:54%;max-width:700px;min-height:650px;background:#ffffffeb;backdrop-filter:blur(7px);border:1px solid #fff;border-radius:35px;padding:80px 38px;display:flex;flex-direction:column;justify-content:center}
+html[data-mode=mindora] .motion-site .motion-hero h1{font-family:Georgia,'Batang',serif;font-size:clamp(33px,3.35vw,49px);font-weight:400;line-height:1.45}
+html[data-mode=mindora] .motion-site .hero-copy>.eyebrow{color:#608376;font-size:9px}
+html[data-mode=mindora] .motion-site .hero-description{font-size:16px;margin-top:25px}
+html[data-mode=mindora] .motion-site .hero-buttons{flex-direction:column;gap:20px}
+html[data-mode=mindora] .motion-site .button{border-radius:99px}
+html[data-mode=mindora] .world-signature{left:auto;right:35px;transform:none;bottom:42px;flex-direction:column;color:#34655c}
+html[data-mode=mindora] .motion-site .hero-coordinates{display:none}
+html[data-mode=mindora] .glass-orbit{display:block;position:absolute;right:-8%;top:6%;width:48%;height:80%;border:1px solid #fff9;border-radius:50%;transform:rotate(25deg);animation:glass-orbit 22s linear infinite}
+html[data-mode=mindora] .motion-site .kinetic-strip{background:#e5eeea;border:0;padding:28px 0}html[data-mode=mindora] .kinetic-strip>div{font-family:Georgia,'Batang',serif;font-weight:400}
+html[data-mode=mindora] .motion-site .project-heading{display:block;text-align:center;max-width:900px;margin:0 auto}
+html[data-mode=mindora] .motion-site .project-heading h2{font-family:Georgia,'Batang',serif;line-height:1.5;font-weight:400}
+html[data-mode=mindora] .project-heading>p{margin-top:30px}
+html[data-mode=mindora] .micro-definition{justify-content:center;text-align:center}
+html[data-mode=mindora] .motion-site .project-stats{max-width:1000px;margin:55px auto 0;gap:1px;background:#d7e3dc;border-radius:35px;overflow:hidden}
+html[data-mode=mindora] .motion-site .project-stats article{border:0;border-radius:0;text-align:center;padding:50px 25px;box-shadow:none}
+html[data-mode=mindora] .motion-site .project-stats article>strong{font-family:Georgia,serif;font-size:100px}
+html[data-mode=mindora] .motion-site .project-method{gap:90px;margin-top:130px}
+html[data-mode=mindora] .motion-site .experiment-steps li{border-left:0;border-bottom:1px solid #abc0b54f;padding:40px 0;background:transparent}
+html[data-mode=mindora] .motion-site .step-index{border-radius:50%;background:#e3eeea;color:#34655c;border:0}
+html[data-mode=mindora] .motion-site .demo-layout{display:flex;flex-direction:column;max-width:1000px;gap:55px}
+html[data-mode=mindora] .demo-layout figure{width:100%}html[data-mode=mindora] .moment-copy{text-align:center;max-width:720px}
+html[data-mode=mindora] .motion-site .demo-moment{background:#e6efea;border:0;padding:80px 25px}
+html[data-mode=mindora] .motion-site .works-grid{grid-template-columns:1fr;max-width:1080px;margin-inline:auto;gap:35px}
+html[data-mode=mindora] .motion-site .work-card{display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;border:0;box-shadow:0 20px 65px #6580740c}
+html[data-mode=mindora] .motion-site .work-card.compact{display:block;padding:15px}
+html[data-mode=mindora] .motion-site .belief{background:#dceae2}html[data-mode=mindora] .motion-site .belief h2{font-family:Georgia,'Batang',serif}
+/* FRONTIER — botanical theatre, enormous figures and arched garden panels. */
+html[data-mode=frontier] .motion-site .motion-hero{min-height:920px;height:920px;padding-top:75px;background:#000}
+html[data-mode=frontier] .scene-image{background-image:url('assets/frontier-garden.png');background-size:100% auto;background-position:center bottom;background-repeat:no-repeat;transform-origin:center bottom;animation:garden-grow 17s ease-in-out infinite alternate}
+html[data-mode=frontier] .motion-site .hero-copy{max-width:960px}
+html[data-mode=frontier] .motion-site .motion-hero h1{font-family:Georgia,'Batang',serif;font-weight:400;font-size:clamp(38px,4.5vw,67px);line-height:1.4}
+html[data-mode=frontier] .motion-site .hero-copy>.eyebrow{color:#f5c4a0}
+html[data-mode=frontier] .motion-site .hero-description{color:#ddd0cf}
+html[data-mode=frontier] .motion-site .button{border-radius:50px}
+html[data-mode=frontier] .motion-site .hero-note{color:#c9babb}
+html[data-mode=frontier] .world-signature{bottom:65px;color:#fff;background:#000b;padding:12px 20px;border-radius:35px}
+html[data-mode=frontier] .motion-site .hero-coordinates{color:#fff}
+html[data-mode=frontier] .bloom-pollen{display:block;position:absolute;left:16%;top:35%;font-size:28px;color:#ffbc70;animation:pollen-float 13s linear infinite;text-shadow:350px 70px #f6acc6,700px 260px #f9d390,130px 310px #f59eae,-70px 130px #f5cb62}
+html[data-mode=frontier] .motion-site .kinetic-strip{background:#f1b4b0}html[data-mode=frontier] .motion-site .kinetic-strip>div,html[data-mode=frontier] .motion-site .kinetic-strip b{color:#251521}
+html[data-mode=frontier] .motion-site .project-heading{display:block;max-width:960px;margin:0 auto;text-align:center}
+html[data-mode=frontier] .motion-site .project-heading h2{font-family:Georgia,'Batang',serif;font-weight:400;font-size:clamp(36px,5vw,68px)}
+html[data-mode=frontier] .project-heading>p{margin-top:35px}html[data-mode=frontier] .micro-definition{justify-content:center}
+html[data-mode=frontier] .motion-site .project-stats{gap:25px;margin-top:60px}
+html[data-mode=frontier] .motion-site .project-stats article{border:1px solid #e3a4b655;border-radius:150px 150px 15px 15px;text-align:center;padding:65px 20px 40px;background:radial-gradient(ellipse at 50% 0,#68304055,transparent 80%),#111}
+html[data-mode=frontier] .motion-site .project-stats article:nth-child(2){background:radial-gradient(ellipse at 50% 0,#81642d55,transparent 80%),#111}
+html[data-mode=frontier] .motion-site .project-stats article:nth-child(3){background:radial-gradient(ellipse at 50% 0,#315f4655,transparent 80%),#111}
+html[data-mode=frontier] .motion-site .project-stats article>strong{font-family:Georgia,serif;font-size:150px;line-height:1.3;font-weight:400;color:#f3bacb}
+html[data-mode=frontier] .motion-site .project-method{display:block}
+html[data-mode=frontier] .motion-site .method-heading{position:static;max-width:800px;margin:0 auto 70px;text-align:center}
+html[data-mode=frontier] .method-heading .experiment-art{max-width:500px;margin:35px auto 0;border-radius:180px 180px 12px 12px}
+html[data-mode=frontier] .experiment-steps{max-width:1000px;margin:auto}
+html[data-mode=frontier] .motion-site .experiment-steps li{width:74%;padding:35px 28px;border-left:1px solid #b7779855;margin-bottom:25px;border-radius:0 45px 45px 0;background:linear-gradient(90deg,#44233355,transparent)}
+html[data-mode=frontier] .motion-site .experiment-steps li:nth-child(even){margin-left:26%;border-color:#dfb067;background:linear-gradient(90deg,#53401b55,transparent)}
+html[data-mode=frontier] .motion-site .step-index{border-radius:50%;background:#eaaaab;color:#21111b}
+html[data-mode=frontier] .motion-site .demo-layout{grid-template-columns:1fr 1.1fr;gap:65px}
+html[data-mode=frontier] .demo-layout img{border-radius:250px 250px 12px 12px!important}
+html[data-mode=frontier] .motion-site .demo-moment{background:radial-gradient(ellipse at 10% 50%,#54293855,transparent 60%),#090708}
+html[data-mode=frontier] .motion-site .work-card{border-radius:28px}.motion-site .work-card{min-width:0}
+html[data-mode=frontier] .motion-site .work-card:nth-child(even){margin-top:75px}
+html[data-mode=frontier] .motion-site .belief{background:linear-gradient(#05050599,#050505dd),url('assets/frontier-garden.png') center/cover;padding-block:170px}
+html[data-mode=frontier] .motion-site .belief h2{color:#f9cfdd;font-family:Georgia,'Batang',serif}
+html[data-mode=frontier] .motion-site .people-panel{border-radius:120px 120px 20px 20px;padding:65px 45px;background:linear-gradient(130deg,#32231f,#201621)}
+@keyframes sky-drift{to{transform:scale(1.055) translateY(-10px)}}@keyframes city-pan{to{transform:scale(1.08) translateX(-1.5%)}}@keyframes glass-breathe{to{transform:scale(1.045) translateX(10px)}}@keyframes glass-orbit{to{transform:rotate(385deg)}}@keyframes garden-grow{to{transform:scale(1.06) rotate(.6deg)}}@keyframes pollen-float{0%{transform:translateY(80px);opacity:0}30%,70%{opacity:.8}100%{transform:translateY(-150px) rotate(160deg);opacity:0}}
+@media(max-width:1050px){.mode-dock-inner{justify-content:flex-start}.mode-options{justify-content:flex-start}.mode-options button{font-size:10px;padding:8px 10px}.mode-options i{font-size:14px}html[data-mode=axle] .motion-site .project-stats article{display:block}html[data-mode=axle] .motion-site .project-method{grid-template-columns:270px 1fr}html[data-mode=mindora] .motion-site .hero-copy{padding:50px 25px;width:58%}html[data-mode=ayush] .experiment-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){
+.mode-dock-inner{padding:7px 10px}.mode-options{gap:3px}.mode-options button{font-size:10px;min-height:42px;padding:8px 11px}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .project-heading h2{font-size:34px}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .demo-layout{display:grid;grid-template-columns:1fr;gap:40px}
+html[data-mode=ayush] .motion-site .motion-hero{height:800px;min-height:800px;padding-top:40px}html[data-mode=ayush] .scene-image{background-position:57% center}html[data-mode=ayush] .motion-site .motion-hero h1{font-size:37px}html[data-mode=ayush] .edition-word{top:52%;font-size:100px}html[data-mode=ayush] .motion-site .method-heading{display:block}html[data-mode=ayush] .method-heading .experiment-art{margin-top:25px;max-height:none}html[data-mode=ayush] .motion-site .project-stats article:nth-child(2){transform:rotate(1deg)}html[data-mode=ayush] .motion-site .work-card:nth-child(2){transform:none}html[data-mode=ayush] .motion-site .project-method{margin-top:70px}
+html[data-mode=axle] .motion-site .motion-hero{margin:10px;width:calc(100% - 20px);height:900px;min-height:900px;padding:15px;align-items:flex-start}html[data-mode=axle] .motion-site .hero-copy{width:100%;padding:28px 20px;margin:0}html[data-mode=axle] .motion-site .motion-hero h1{font-size:34px}html[data-mode=axle] .city-console{top:auto;bottom:15px;left:15px;right:15px;width:auto;height:195px;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:20px}html[data-mode=axle] .city-console>strong{font-size:20px;grid-column:1;grid-row:2 / 5}html[data-mode=axle] .city-console a{padding:8px;font-size:10px;grid-column:2}html[data-mode=axle] .city-console a b{font-size:10px}html[data-mode=axle] .console-number{display:none}html[data-mode=axle] .console-label{grid-column:1 / 3}html[data-mode=axle] .city-reticle{inset:370px 15px 225px}html[data-mode=axle] .world-signature{bottom:230px;right:20px;font-size:9px;padding:10px}html[data-mode=axle] .edition-art-credit{bottom:215px}html[data-mode=axle] .motion-site .project-heading,html[data-mode=axle] .motion-site .people-panel{display:block}html[data-mode=axle] .motion-site .project-method{grid-template-columns:1fr;gap:35px}html[data-mode=axle] .motion-site .demo-moment{margin:10px}
+html[data-mode=mindora] .motion-site .motion-hero{margin:10px;width:calc(100% - 20px);height:1000px;min-height:1000px;align-items:flex-start;border-radius:28px;padding:15px}html[data-mode=mindora] .motion-site .hero-copy{margin:0;width:100%;min-height:530px;border-radius:25px;padding:42px 20px}html[data-mode=mindora] .motion-site .motion-hero h1{font-size:34px}html[data-mode=mindora] .scene-image{background-size:auto 75%;background-repeat:no-repeat;background-position:60% bottom}html[data-mode=mindora] .world-signature{bottom:35px;right:25px}html[data-mode=mindora] .glass-orbit{top:55%;height:40%;width:70%}html[data-mode=mindora] .motion-site .project-stats article{padding:30px 18px}html[data-mode=mindora] .motion-site .project-method{gap:30px;margin-top:70px}html[data-mode=mindora] .motion-site .work-card{display:block}html[data-mode=mindora] .motion-site .project-stats article>strong{font-size:85px}
+html[data-mode=frontier] .motion-site .motion-hero{height:880px;min-height:880px;padding-top:50px}html[data-mode=frontier] .scene-image{background-size:auto 76%;background-position:center bottom}html[data-mode=frontier] .motion-site .motion-hero h1{font-size:38px}html[data-mode=frontier] .motion-site .hero-copy{padding-inline:26px}html[data-mode=frontier] .motion-site .project-stats article{padding:40px 20px 25px;border-radius:70px 70px 12px 12px}html[data-mode=frontier] .motion-site .project-stats article>strong{font-size:100px}html[data-mode=frontier] .motion-site .experiment-steps li{width:94%;padding:25px 15px}html[data-mode=frontier] .motion-site .experiment-steps li:nth-child(even){margin-left:6%}html[data-mode=frontier] .motion-site .work-card:nth-child(even){margin-top:0}html[data-mode=frontier] .motion-site .people-panel{padding:40px 25px;border-radius:65px 65px 15px 15px}
+}
+@media(max-width:520px){html[data-mode=ayush] .experiment-steps{grid-template-columns:1fr}html[data-mode=ayush] .motion-site .motion-hero h1{font-size:31px}html[data-mode=ayush] .motion-site .hero-buttons{flex-direction:row;gap:15px}html[data-mode=ayush] .hero-buttons .button{font-size:12px;padding:15px}html[data-mode=ayush] .hero-buttons .text-link{font-size:11px}html[data-mode=axle] .motion-site .motion-hero h1{font-size:30px}html[data-mode=axle] .motion-site .hero-buttons{flex-direction:row;gap:12px}html[data-mode=axle] .hero-buttons .button{padding:14px;font-size:11px}html[data-mode=axle] .hero-buttons .text-link{font-size:11px}html[data-mode=mindora] .motion-site .motion-hero h1{font-size:29px}html[data-mode=frontier] .motion-site .motion-hero h1{font-size:33px}html[data-mode=frontier] .motion-site .hero-description{font-size:14px}html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .project-heading h2{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.edition-scene *{animation:none!important}}
+
+html[data-mode=ayush] .motion-site .motion-hero .hero-description,html[data-mode=ayush] .motion-site .motion-hero .text-link{color:#fff!important}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site .mode-options button[aria-pressed=true] span,html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora]) .motion-site .mode-options button[aria-pressed=true] i{color:#fff}
+@media(min-width:801px){html[data-mode=ayush] .motion-site .motion-hero{height:810px;min-height:810px}html[data-mode=ayush] .scene-image{background-position:center 60%}}
+html[data-mode=frontier] .motion-site .button{border-radius:50px!important}
+.mode-options{scrollbar-color:#75817b transparent}
+@media(max-width:800px){html[data-mode=frontier] .scene-image{background-size:100% 70%;background-position:center bottom}}
