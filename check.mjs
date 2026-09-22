@@ -1,0 +1,17 @@
+import { readFile, access, readdir } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const html = await readFile(new URL('./dist/index.html', import.meta.url), 'utf8');
+const data = JSON.parse(await readFile(new URL('./dist/data.json', import.meta.url), 'utf8'));
+const paths = [...html.matchAll(/(?:src|href)="([^"#:]+\.(?:webp|css|js))"/g)].map(m => m[1]);
+paths.push(...data.gallery.map(x => x.image), ...data.works.filter(x => x.image).map(x => x.image));
+await Promise.all(paths.map(path => access(new URL('./dist/' + path, import.meta.url))));
+const ids = [...html.matchAll(/id="([^"]+)"/g)].map(m => m[1]);
+assert.equal(ids.length, new Set(ids).size, 'IDs must be unique');
+for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]), 'Missing anchor: ' + match[1]);
+assert.equal(data.works.length, 4);
+for (const work of data.works) assert.equal(new URL(work.url).protocol, 'https:');
+for (const match of html.matchAll(/href="(mailto:[^"]+)"/g)) assert(match[1].startsWith('mailto:naggu1999@gmail.com'));
+assert.equal((html.match(/<h1\b/g) || []).length, 1);
+assert(!/\.pdf|대화녹음/.test(html), 'Private source documents must not be linked');
+assert(!(await readdir(new URL('./dist', import.meta.url))).some(name => name.endsWith('.pdf') || name.endsWith('.txt')));
+console.log(`PASS: ${paths.length} asset references, ${ids.length} unique anchors, 4 HTTPS services, email links, private-source exclusion.`);
