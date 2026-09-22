@@ -19,3 +19,7 @@ Built-in image generation explored this prompt: Refined contemporary typographic
 ## User-selected final logo
 
 The supplied `ChatGPT Image 2026년 9월 23일 오전 07_54_04.png` is copied unchanged to `dist/assets/gachi-on-approved.png`. Header and footer now use this asset. CSS crops surrounding white space only; the orange ON, arae-a dot, lowercase i and all original artwork remain unchanged. Previous assets are retained for rollback.
+
+## Transparent extraction
+
+Final asset: `dist/assets/gachi-on-transparent.png`, extracted using built-in image generation. Prompt: Remove white background and internal white holes; preserve supplied Jeju arae-a lettering, orange ON and dots, black lettering and lowercase i; transparent alpha, tight horizontal framing, no redesign. CSS has no white background. Dark themes map black lettering to white while retaining orange; light themes use original colors.
