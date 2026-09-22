@@ -29,7 +29,7 @@
 - 상설 실험실은 구상 중, 책은 출판 기획 중으로 구분했습니다.
 - 실명 프로필, 미확정 협력기관 로고, 가상의 후기·제작자·건강정보를 추가하지 않았습니다.
 - 서비스 화면은 제공된 캡처입니다. 실시간 화면이나 현재 접속 보장을 뜻하지 않습니다.
-- 현장 이미지를 사용했고 AI 일러스트는 사용하지 않았습니다. 자료 전체를 호스팅 폴더에 복사하지 않았습니다.
+- 현장 사진과 당근 공개 게시글의 AI 일러스트를 사용했습니다. AI 이미지는 캡션에 재구성 이미지라고 명시했습니다. 자료 전체를 호스팅 폴더에 복사하지 않았습니다.
 
 ## 공개 운영 전 갱신할 정보
 
@@ -38,3 +38,20 @@
 ## 검증
 
 `node --check dist/main.js` 및 `node check.mjs`로 구문, 로컬 자산, 앵커, 서비스 주소, 이메일 경로를 검사합니다. 브라우저에서 모바일 메뉴, 갤러리 닫기/포커스 복귀, 이메일 복사와 화면 넘침을 확인합니다.
+
+## 당근 자료 보강 (2026-09-23)
+
+공개 후기에서 확인한 활동 4개와 짧은 후기 3개를 추가했습니다. 각 카드에 원문 링크가 있습니다. 모집 버튼은 실제 2기 모집 게시글로 연결했습니다. 전체 게시글·댓글은 복제하지 않았고, 현재 회원 수와 누적 참여자 수는 혼용하지 않았습니다.
+
+사진은 기존 제공 자료의 발표·건강 주제 현장 사진 2장을 추가 노출했습니다. 새 `daangn-video.webp`는 악동 님의 영상 스터디 후기 속 AI 일러스트이며 실제 현장 사진으로 표시하지 않았습니다.
+
+출처:
+- AI 기초: https://www.daangn.com/kr/group-post/72w58g8yxq59/
+- 발표 자료 · 업무: https://www.daangn.com/kr/group-post/cxrecp6yobn5/
+- 이미지 · 영상: https://www.daangn.com/kr/group-post/x8pex9hzz4fu/
+- Unity · 게임: https://www.daangn.com/kr/group-post/hrbhad31zrkx/
+- 하루 후기: https://www.daangn.com/kr/group-post/xh67xejy986e/
+- 백록 후기: https://www.daangn.com/kr/group-post/hrbhad31zrkx/
+- 카이로스 후기: https://www.daangn.com/kr/group-post/9o5vt17npuf7/
+- 모임 분위기: https://www.daangn.com/kr/group-post/d7r2hnppgapy/
+- 2기 모집: https://www.daangn.com/kr/group-post/4m7wjckuikqr/
