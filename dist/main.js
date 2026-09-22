@@ -49,7 +49,7 @@ document.querySelector('#copy-email').addEventListener('click', async () => {
 const sections = [...document.querySelectorAll('main > section[id]')];
 const navLinks = [...menu.querySelectorAll('a')];
 function updateActiveSection() {
-  const target = [...sections].reverse().find(section => section.getBoundingClientRect().top <= 160);
+  const target = [...sections].filter(section => !section.hidden && section.getBoundingClientRect().top <= 160).sort((a,b) => b.getBoundingClientRect().top-a.getBoundingClientRect().top)[0];
   for (const link of navLinks) {
     const active = !!target && link.hash === '#' + target.id;
     link.classList.toggle('active', active);
