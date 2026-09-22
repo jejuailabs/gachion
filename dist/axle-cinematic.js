@@ -22,14 +22,14 @@
           vec2 source=vec2(1536.,1024.); float cover=max(size.x/source.x,size.y/source.y);
           vec2 q=(vec2(uv.x,1.-uv.y)*size-(size-source*cover)*.5)/(source*cover);
           float cloud=(1.-smoothstep(.12,.30,q.y))*smoothstep(.10,.27,q.x)*(1.-smoothstep(.72,.90,q.x));
-          vec2 shift=vec2(sin(time*.11+q.y*8.)*.004,cos(time*.13+q.x*7.)*.0013)*cloud;
+          vec2 shift=vec2(sin(time*.23+q.y*5.)*.024,cos(time*.19+q.x*5.)*.0035)*cloud;
           float water=smoothstep(.505,.555,q.y);
           float rail=1.-.97*max(1.-smoothstep(.001,.011,abs(q.y-.675)),1.-smoothstep(.001,.011,abs(q.y-.757)));
-          shift.x+=sin(q.y*350.+time*.95+sin(q.x*13.))*0.00065*water*rail;
-          shift.y+=sin(q.x*33.+time*.65+q.y*85.)*.00030*water*rail;
+          shift.x+=sin(q.y*270.+time*1.25+sin(q.x*13.))*0.0026*water*rail;
+          shift.y+=sin(q.x*33.+time*.85+q.y*85.)*.00075*water*rail;
           vec3 c=texture2D(image,clamp(q+shift,0.,1.)).rgb;
           float warm=smoothstep(.025,.16,c.r-c.b)*water;
-          c+=warm*.012*sin(q.y*230.-time*.8+q.x*9.);
+          c+=warm*.055*sin(q.y*150.-time*1.05+q.x*9.);
           gl_FragColor=vec4(c,1.);
         }`);
       ambientProgram=gl.createProgram(); gl.attachShader(ambientProgram,vertex); gl.attachShader(ambientProgram,fragment); gl.linkProgram(ambientProgram);
@@ -39,12 +39,14 @@
       const position=gl.getAttribLocation(ambientProgram,'p');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
       ambientTexture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,ambientTexture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,city);
       ambientReady=true;
-    } catch { ambientCanvas.style.display='none'; }
+      ambientCanvas.dataset.renderer='ready';
+    } catch { ambientCanvas.style.display='none'; ambientCanvas.dataset.renderer='failed'; }
   }
   function drawAmbient(){
     if(!ambientReady)return;
     gl.useProgram(ambientProgram);gl.viewport(0,0,ambientCanvas.width,ambientCanvas.height);
     gl.uniform2f(gl.getUniformLocation(ambientProgram,'size'),width,height);gl.uniform1f(gl.getUniformLocation(ambientProgram,'time'),elapsed);gl.drawArrays(gl.TRIANGLES,0,6);
+    ambientCanvas.dataset.time=elapsed.toFixed(2);
   }
   city.addEventListener('load',()=>{initAmbient();drawAmbient();});
   const tram = new Image();
