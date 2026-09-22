@@ -1,0 +1,8 @@
+/* The arae-a is part of the image, independent of installed Hangul fonts. */
+body.motion-site .brand{display:inline-flex;align-items:center;flex:0 0 auto;line-height:1;letter-spacing:0}
+body.motion-site .brand .brand-image{display:block;width:180px;height:auto;max-width:none;object-fit:contain}
+body.motion-site footer .brand .brand-image{width:170px}
+@media(max-width:800px){body.motion-site .site-header .brand .brand-image{width:145px}body.motion-site .nav-wrap{gap:12px}}
+@media(max-width:380px){body.motion-site .site-header .brand .brand-image{width:126px}body.motion-site .nav-wrap{gap:8px}}
+
+body.motion-site .brand .brand-image{background:#f6f3ec;border-radius:9px}
