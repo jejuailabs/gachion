@@ -1,0 +1,124 @@
+/* Independent scene objects + staged typography. No animated full-image substitute. */
+#live-stage,.scene-ui{display:none}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) #live-stage{display:block;position:absolute;inset:0;z-index:0;pointer-events:none}
+#live-stage canvas{display:block;width:100%;height:100%}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-ui{display:block;position:absolute;inset:0;z-index:4;pointer-events:none}
+.scene-ui a,.scene-ui button{pointer-events:auto}
+.scene-rail,.scene-nav,.scene-pin,.studio-window,.garden-showcase,.mindora-foot{display:none}
+.scene-controls{position:absolute;right:24px;top:24px;display:flex;gap:7px}
+.scene-controls button{border:1px solid #ffffff65;background:#ffffffaa;color:#23363c;font-size:11px;padding:10px 13px;border-radius:50px;backdrop-filter:blur(15px)}
+.scene-controls button:hover{background:white;transform:translateY(-2px)}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .motion-hero{max-height:none;height:calc(100svh - 150px);min-height:700px;max-width:none;overflow:hidden;perspective:1000px}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .hero-copy{z-index:3}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .city-console{display:none!important}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .hero-coordinates,html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .world-signature{display:none!important}
+html.live-ready:is([data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-image{opacity:0}
+html.live-ready[data-mode=ayush] .scene-image{background-image:none;background:radial-gradient(ellipse at 16% 83%,#ffd4e8 0,transparent 40%),radial-gradient(ellipse at 85% 68%,#ecd3fa 0,transparent 35%),linear-gradient(#2975df,#87a6ec 60%,#dcb7eb);animation:none}
+html.live-ready .edition-art-credit{display:none}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-enter .headline-row{display:inline-block;overflow:hidden;vertical-align:bottom}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-enter .headline-row>span{display:inline-block;animation:headline-in 1.15s cubic-bezier(.16,1,.3,1) both;animation-delay:.3s}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-enter .headline-row:last-child>span{animation-delay:.5s}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-enter .hero-description{animation:copy-in 1s .8s both}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-enter .hero-buttons{animation:copy-in 1s 1.05s both}
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .scene-enter .hero-copy>.eyebrow{animation:copy-in .8s .15s both}
+/* AXLE: leave the city open. Docked metrics and a low-left editorial anchor. */
+html[data-mode=axle] .motion-site .motion-hero{margin:12px;width:calc(100% - 24px);padding:0;border-radius:23px;background:#a5b1bd;min-height:670px}
+html[data-mode=axle] #live-stage{left:172px}
+html[data-mode=axle] .scene-rail{display:grid;grid-template-rows:1fr 1fr 1fr;position:absolute;left:8px;top:8px;bottom:8px;width:154px;gap:8px}
+.rail-tile{display:flex;flex-direction:column;justify-content:space-between;gap:10px;background:#26313be8;color:#fff;padding:24px 19px;border:1px solid #ffffff28;border-radius:24px;overflow:hidden;position:relative;backdrop-filter:blur(20px)}
+.rail-tile>span{font-size:12px;line-height:1.5}.rail-tile strong{font-size:65px;font-weight:450;letter-spacing:-.06em;line-height:1}.rail-tile strong small{font-size:18px;margin-left:7px}.rail-dial{background:#e5edf0c9;color:#34444a}.rail-dial strong{position:relative;margin:auto;font-size:52px}.rail-dial>span{z-index:1}.dial-orbit{position:absolute;inset:55px 10px 20px;border:3px dotted #61777a70;border-radius:50%;animation:dial-spin 24s linear infinite}.dial-orbit:after{content:'';position:absolute;inset:-3px;border:3px solid transparent;border-top-color:#ec7d3e;border-radius:50%;transform:rotate(45deg)}.signal-bars{font-size:27px!important;color:#f29a63;letter-spacing:4px;animation:signal-glow 3s infinite}
+html[data-mode=axle] .scene-nav{display:flex;gap:7px;position:absolute;left:192px;top:18px}.scene-nav a{border:1px solid #fff7;border-radius:50px;padding:13px 18px;color:#fff;background:#253c4c58;font-size:12px;backdrop-filter:blur(14px)}
+html[data-mode=axle] .scene-controls{right:18px;top:18px;flex-direction:column}
+html[data-mode=axle] .motion-site .hero-copy{position:absolute;left:205px;bottom:38px;top:auto;margin:0;max-width:610px;width:calc(100% - 260px);padding:0;background:none;border:0;backdrop-filter:none;text-align:left;min-height:0;border-radius:0}
+html[data-mode=axle] .motion-site .motion-hero h1{font-size:clamp(30px,3.3vw,48px);font-weight:500;line-height:1.2;letter-spacing:-.055em;color:#142b36;text-shadow:0 1px 15px #d8e8f6}
+html[data-mode=axle] .motion-site .hero-copy>.eyebrow{color:#243d49;margin-bottom:13px;font-size:10px}
+html[data-mode=axle] .motion-site .hero-description{display:none}
+html[data-mode=axle] .motion-site .hero-buttons{margin-top:20px;gap:18px}
+html[data-mode=axle] .motion-site .hero-buttons .button{background:#f3f7f3c7;color:#20353d;border:1px solid #fff;border-radius:50px;padding:14px 20px;font-size:13px;box-shadow:0 7px 30px #1e364f20}
+html[data-mode=axle] .motion-site .hero-buttons .text-link{color:#17343f;background:#edf5f3a8;padding:10px;border-radius:8px;font-size:12px}
+html[data-mode=axle] .scene-pin{display:block;position:absolute;background:#f28239;color:white;padding:8px 12px;border-radius:7px;font-size:11px;box-shadow:0 5px 25px #f5833c55;animation:pin-hover 3s ease-in-out infinite}
+html[data-mode=axle] .pin-one{left:35%;top:36%}html[data-mode=axle] .pin-two{left:63%;top:28%;animation-delay:.7s}html[data-mode=axle] .pin-three{right:9%;top:48%;animation-delay:1.4s}
+html[data-mode=axle] .scene-enter .rail-tile{animation:rail-in 1.1s .2s both}html[data-mode=axle] .scene-enter .rail-tile:nth-child(2){animation-delay:.45s}html[data-mode=axle] .scene-enter .rail-tile:nth-child(3){animation-delay:.7s}
+html[data-mode=axle] .motion-site .project-stats article:after{content:'';display:block;grid-column:1/-1;height:3px;background:linear-gradient(90deg,#b76b3f,transparent);transform-origin:left;transform:scaleX(var(--section-progress,.5))}
+/* AYUSH: a floating browser above a real rotating creative machine. */
+html[data-mode=ayush] .motion-site .motion-hero{padding-top:27px;min-height:800px}
+html[data-mode=ayush] .motion-site .hero-copy{max-width:900px;padding-inline:20px}
+html[data-mode=ayush] .motion-site .motion-hero h1{font-size:clamp(30px,3.2vw,45px);line-height:1.25}
+html[data-mode=ayush] .motion-site .hero-copy>.eyebrow{font-size:9px;margin-bottom:11px}
+html[data-mode=ayush] .motion-site .hero-description{font-size:13px;margin-top:12px}
+html[data-mode=ayush] .motion-site .hero-buttons{position:absolute;top:620px;left:50%;transform:translateX(-50%);white-space:nowrap;animation:none!important}
+html[data-mode=ayush] .studio-window{display:block;position:absolute;top:33%;left:50%;width:400px;min-height:225px;transform:translateX(-50%);padding:22px 27px;background:linear-gradient(135deg,#ffffffbf,#ece6ff77);border:1px solid #fff;border-radius:17px;color:#383256;box-shadow:0 22px 70px #35409840,inset 0 0 25px #fff7;backdrop-filter:blur(8px);animation:studio-float 6s ease-in-out infinite;transform-style:preserve-3d}
+.window-bar{display:flex;justify-content:space-between;font-size:10px;color:#9480b7;border-bottom:1px solid #fff8;padding-bottom:13px}.window-bar b{font-size:9px;letter-spacing:.1em;font-weight:500}.studio-window>strong{display:block;font-size:28px;font-weight:650;line-height:1.45;margin-top:18px}.studio-flow{display:flex;gap:10px;font-size:10px;margin-top:20px;align-items:center}.studio-flow span{background:#fff9;padding:8px 10px;border-radius:8px}.studio-flow i{font-style:normal}.studio-meter{margin-top:17px;height:3px;background:#fff7;overflow:hidden;border-radius:4px}.studio-meter span{display:block;width:35%;height:100%;background:linear-gradient(90deg,#a58cec,#74dbe4);animation:meter-travel 3s ease-in-out infinite}
+html[data-mode=ayush] .edition-word{top:44%;font-size:clamp(120px,21vw,360px);color:#ffffff4d;mix-blend-mode:normal;white-space:nowrap;animation:studio-type 19s linear infinite;z-index:0;letter-spacing:-.07em}
+html[data-mode=ayush] .scene-controls{top:auto;bottom:24px;right:24px}
+html[data-mode=ayush] .motion-site .project-stats article{transition:transform 1s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+html[data-mode=ayush] .motion-site .project-stats article.is-visible:nth-child(2){transform:translateY(calc(35px - var(--section-progress,.5)*50px)) rotate(2deg)}
+html[data-mode=ayush] .experiment-steps li:nth-child(2){transition-delay:.1s}html[data-mode=ayush] .experiment-steps li:nth-child(3){transition-delay:.2s}
+/* MINDORA: quiet, readable left panel against constantly evolving glass. */
+html[data-mode=mindora] .motion-site .motion-hero{margin:12px;width:calc(100% - 24px);padding:12px;border-radius:30px;min-height:690px}
+html[data-mode=mindora] .motion-site .hero-copy{width:53%;height:100%;min-height:0;margin:0;padding:45px 32px 165px;border-radius:25px;background:#fff;backdrop-filter:none;justify-content:center}
+html[data-mode=mindora] .motion-site .motion-hero h1{font-family:inherit;font-size:clamp(30px,3.1vw,45px);font-weight:500;line-height:1.28}
+html[data-mode=mindora] .motion-site .hero-description{font-size:14px;margin-top:23px}
+html[data-mode=mindora] .motion-site .hero-buttons{margin-top:20px;gap:13px}
+html[data-mode=mindora] .motion-site .hero-buttons .button{padding:13px 20px;font-size:13px;border-radius:50px}
+html[data-mode=mindora] .motion-site .hero-note{display:none}
+html[data-mode=mindora] .mindora-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:absolute;left:28px;bottom:28px;width:calc(53% - 45px)}
+.mindora-foot a{padding:18px 14px;min-height:95px;background:#eff4f1;border-radius:12px;color:#27483c;display:flex;flex-direction:column;justify-content:space-between;gap:12px}.mindora-foot small{font-size:10px}.mindora-foot strong{font-size:25px;font-weight:500}.mindora-foot a:last-child strong{font-size:15px}
+html[data-mode=mindora] .glass-orbit{display:none}
+html[data-mode=mindora] .scene-controls{top:auto;bottom:30px}
+html[data-mode=mindora] .scene-enter .mindora-foot a{animation:copy-in 1s 1s both}html[data-mode=mindora] .scene-enter .mindora-foot a:nth-child(2){animation-delay:1.2s}html[data-mode=mindora] .scene-enter .mindora-foot a:nth-child(3){animation-delay:1.4s}
+html[data-mode=mindora] .motion-site .demo-layout figure{clip-path:inset(0 round 35px);transform:scale(calc(.91 + var(--section-progress,.5)*.12));transition:transform .4s}
+/* FRONTIER: individual plants grow, sway and part around a rising project window. */
+html[data-mode=frontier] .motion-site .motion-hero{min-height:790px;padding-top:48px;background:#030305}
+html[data-mode=frontier] .motion-site .hero-copy{max-width:840px}
+html[data-mode=frontier] .motion-site .motion-hero h1{font-family:inherit;font-size:clamp(36px,4vw,58px);line-height:1.25;font-weight:450}
+html[data-mode=frontier] .motion-site .hero-description{font-size:15px;margin-top:20px}
+html[data-mode=frontier] .motion-site .hero-buttons{margin-top:20px}
+html[data-mode=frontier] .motion-site .hero-note{display:none}
+html[data-mode=frontier] .garden-showcase{display:block;position:absolute;left:50%;top:54%;width:58%;max-width:750px;padding:22px;background:linear-gradient(145deg,#29242dcc,#11121fe6);border:1px solid #ffffff27;box-shadow:0 15px 80px #000;border-radius:17px;transform:translateX(-50%) perspective(900px) rotateX(10deg);backdrop-filter:blur(20px)}
+.showcase-label{color:#ceadb6;font-size:10px;letter-spacing:.16em}.garden-showcase>div{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}.garden-showcase a{padding:25px 20px;border:1px solid #deb1b433;border-radius:10px;color:#fff;background:#ffffff04;min-height:140px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}.garden-showcase small{color:#bfb0bc;font-size:12px}.garden-showcase strong{font-size:23px;font-weight:450}.garden-showcase a:hover{background:#e0b9ce15}
+html[data-mode=frontier] .scene-enter .garden-showcase{animation:garden-window 1.8s 1.7s both}
+html[data-mode=frontier] .scene-controls{top:auto;bottom:25px}
+html[data-mode=frontier] .scene-controls button{background:#171319dd;color:#e7d4cf;border-color:#ffffff35}
+html[data-mode=frontier] .bloom-pollen{display:none}
+html[data-mode=frontier] .motion-site .experiment-steps li{transition:opacity 1s,transform 1.1s,background .6s}
+html[data-mode=frontier] .motion-site .experiment-steps li.reveal:not(.is-visible){transform:translate(-65px,35px)}
+html[data-mode=frontier] .motion-site .experiment-steps li.reveal:nth-child(even):not(.is-visible){transform:translate(65px,35px)}
+html[data-mode=frontier] .motion-site .project-stats article{transition:opacity 1.2s,transform 1.2s,border-color .4s;transform-origin:center bottom}
+html[data-mode=frontier] .motion-site .project-stats article.reveal:not(.is-visible){transform:translateY(90px) scale(.83)}
+@keyframes headline-in{from{transform:translateY(115%) rotate(3deg);opacity:0}to{transform:translateY(0) rotate(0);opacity:1}}@keyframes copy-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes rail-in{from{opacity:0;transform:translateX(-100%)}to{opacity:1;transform:translateX(0)}}@keyframes dial-spin{to{transform:rotate(360deg)}}@keyframes signal-glow{50%{filter:brightness(1.5);opacity:.55}}@keyframes pin-hover{50%{transform:translateY(-9px)}}@keyframes studio-float{0%,100%{transform:translateX(-50%) translateY(0) rotateY(-7deg) rotateX(5deg)}50%{transform:translateX(-50%) translateY(-18px) rotateY(7deg) rotateX(-3deg)}}@keyframes studio-type{from{transform:translateX(-8%)}to{transform:translateX(14%)}}@keyframes meter-travel{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}@keyframes garden-window{from{opacity:0;transform:translateX(-50%) translateY(130px) perspective(900px) rotateX(30deg)}to{opacity:1;transform:translateX(-50%) translateY(0) perspective(900px) rotateX(10deg)}}
+@media(max-width:1000px){html[data-mode=axle] .scene-nav a{padding:11px;font-size:10px}html[data-mode=axle] .scene-nav{left:182px}html[data-mode=axle] .scene-controls{top:78px}.garden-showcase strong{font-size:19px}}
+@media(max-width:800px){
+html:is([data-mode=ayush],[data-mode=axle],[data-mode=mindora],[data-mode=frontier]) .motion-site .motion-hero{height:auto;min-height:800px}
+html[data-mode=axle] .motion-site .motion-hero{margin:8px;width:calc(100% - 16px);height:810px;min-height:810px}
+html[data-mode=axle] #live-stage{left:0;top:80px}
+html[data-mode=axle] .scene-rail{display:flex;top:8px;left:8px;right:8px;bottom:auto;width:auto;height:89px;gap:5px}
+html[data-mode=axle] .rail-tile{width:33.33%;padding:11px;border-radius:13px;gap:4px;justify-content:center}.rail-tile>span{font-size:9px!important}.rail-tile strong{font-size:36px}.rail-tile strong small{font-size:12px;margin-left:4px}.rail-tile>span:last-child{display:none}.rail-dial strong{font-size:36px;margin:0}.dial-orbit{inset:22px 18px 3px;border-width:1px}.dial-orbit:after{border-width:1px}.signal-bars{display:none}
+html[data-mode=axle] .scene-nav{display:none}html[data-mode=axle] .scene-controls{top:113px;right:14px}.scene-controls button{font-size:10px;padding:8px 11px}
+html[data-mode=axle] .motion-site .hero-copy{left:23px;bottom:33px;width:calc(100% - 46px);padding:18px;background:#e5eef3d9;border:1px solid #fff9;border-radius:17px;backdrop-filter:blur(12px)}
+html[data-mode=axle] .motion-site .motion-hero h1{font-size:28px;line-height:1.3;text-shadow:none}html[data-mode=axle] .motion-site .hero-copy>.eyebrow{font-size:8px}
+html[data-mode=axle] .motion-site .hero-buttons{gap:12px;margin-top:15px;flex-wrap:wrap}html[data-mode=axle] .motion-site .hero-buttons .button{font-size:11px;padding:12px 14px}html[data-mode=axle] .motion-site .hero-buttons .text-link{font-size:10px}
+html[data-mode=axle] .pin-one{left:13%;top:36%}html[data-mode=axle] .pin-two{left:61%;top:31%}html[data-mode=axle] .pin-three{right:9%;top:53%}.scene-pin{font-size:9px!important;padding:6px 9px!important}
+html[data-mode=ayush] .motion-site .motion-hero{min-height:850px;padding-top:35px}html[data-mode=ayush] .motion-site .motion-hero h1{font-size:30px;line-height:1.3}html[data-mode=ayush] .motion-site .hero-description{font-size:13px}html[data-mode=ayush] .motion-site .hero-buttons{top:690px;width:100%;justify-content:center;left:0;transform:none}
+html[data-mode=ayush] .studio-window{top:36%;width:76%;max-width:360px;min-height:200px;padding:18px 20px}.studio-window>strong{font-size:24px}.studio-flow{gap:6px;font-size:8px}.studio-flow span{padding:6px}.window-bar b{font-size:7px}html[data-mode=ayush] .edition-word{top:44%;font-size:150px}
+html[data-mode=mindora] .motion-site .motion-hero{height:1100px;min-height:1100px;padding:10px}html[data-mode=mindora] .motion-site .hero-copy{width:100%;height:530px;padding:35px 20px 100px;min-height:0}html[data-mode=mindora] .motion-site .motion-hero h1{font-size:29px}html[data-mode=mindora] .mindora-foot{left:23px;top:437px;bottom:auto;width:calc(100% - 46px);gap:5px}.mindora-foot a{padding:12px 9px;min-height:77px}.mindora-foot small{font-size:8px}.mindora-foot strong{font-size:22px}.mindora-foot a:last-child strong{font-size:12px}html[data-mode=mindora] .scene-controls{bottom:25px}
+html[data-mode=frontier] .motion-site .motion-hero{min-height:950px;padding-top:42px}html[data-mode=frontier] .motion-site .motion-hero h1{font-size:32px;line-height:1.3}html[data-mode=frontier] .motion-site .hero-description{font-size:13px}html[data-mode=frontier] .motion-site .hero-buttons{gap:17px}html[data-mode=frontier] .garden-showcase{top:53%;width:78%;padding:17px}.garden-showcase>div{grid-template-columns:1fr;gap:8px;margin-top:14px}.garden-showcase a{min-height:94px;padding:15px;gap:12px}.garden-showcase strong{font-size:18px}.garden-showcase small{font-size:10px}.showcase-label{font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){.scene-ui *,.headline-row>span{animation:none!important}.scene-enter .garden-showcase{opacity:1!important}}
+.motion-paused .scene-ui *,.motion-paused .headline-row>span{animation-play-state:paused!important}
+@media(min-width:801px){
+html[data-mode=axle] .motion-site .motion-hero{min-height:590px;height:calc(100svh - 165px)}
+html[data-mode=axle] .motion-site .hero-copy{bottom:27px;left:205px}
+html[data-mode=axle] .motion-site .motion-hero h1{font-size:clamp(28px,2.9vw,43px)}
+html[data-mode=mindora] .motion-site .motion-hero{min-height:610px;height:calc(100svh - 165px)}
+html[data-mode=ayush] .motion-site .motion-hero{min-height:720px;height:calc(100svh - 150px)}
+html[data-mode=ayush] .motion-site .hero-buttons{top:590px}
+html[data-mode=frontier] .motion-site .motion-hero{min-height:720px;height:calc(100svh - 150px);padding-top:34px}
+html[data-mode=frontier] .garden-showcase{top:56%}
+html[data-mode=frontier] .motion-site .motion-hero h1{font-size:clamp(34px,3.7vw,53px)}
+}
+html.live-ready[data-mode=ayush] .scene-image{background:url('assets/studio-sky.png') center/cover;animation:none}
+.motion-paused .scene-enter :is(.headline-row>span,.hero-description,.hero-buttons,.hero-copy>.eyebrow,.rail-tile,.mindora-foot a,.garden-showcase){animation:none!important;opacity:1}
+@media(max-width:800px){html[data-mode=ayush] .motion-site .hero-buttons{top:610px}}
+html[data-mode=frontier] .motion-site .hero-buttons .text-link{background:#09060bdd;border:1px solid #ffffff35;border-radius:40px;padding:11px 18px;color:#fff}
+.live-unavailable .scene-controls{display:none}
