@@ -1,0 +1,68 @@
+/* Mobile layout uses available width, including device safe areas. */
+@media(max-width:800px){
+ html{scroll-padding-top:170px}
+ body.motion-site{--mobile-gutter:clamp(18px,5vw,28px)}
+ body.motion-site .nav-wrap{min-height:64px;padding-inline:max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-right));gap:8px}
+ body.motion-site .site-header .brand-crop{width:clamp(104px,31vw,140px)}
+ body.motion-site .nav-actions{gap:4px;flex-shrink:0}
+ body.motion-site .nav-actions .button.small{min-height:40px;padding:8px 12px;font-size:11px;gap:0}
+ body.motion-site .nav-actions .button.small>span{display:none}
+ body.motion-site #motion-toggle{padding:4px;font-size:9px;min-height:40px}
+ body.motion-site .menu-toggle{width:40px;min-width:40px;height:40px}
+ body.motion-site .mode-dock-inner{padding:6px 12px 8px;overflow:visible;width:100%;max-width:100%;display:block}
+ body.motion-site .mode-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;min-width:0;gap:4px}
+ body.motion-site .mode-options button{min-width:0;min-height:36px;padding:6px 3px;flex-direction:row;gap:5px;font-size:10px;white-space:nowrap}
+ body.motion-site .mode-options button>span[data-topic]:after{display:none}
+ body.motion-site .mode-options button i{font-size:13px}
+ body.motion-site .container{width:calc(100% - var(--mobile-gutter)*2);max-width:680px}
+ body.motion-site :is(.section,.perspective-section){padding-block:clamp(48px,12vw,72px)}
+ body.motion-site :is(.section,.perspective-section) :is(h2,h3,p,dd,a){overflow-wrap:anywhere}
+ body.motion-site :is(.about-grid,.heading-row,.works-grid,.project-stats,.bench-layout,.join-grid,.next-grid)>*{min-width:0}
+ body.motion-site :is(.section-heading,.project-heading,.perspective-section) h2{font-size:clamp(27px,7.5vw,36px)!important;line-height:1.4;text-wrap:balance}
+ body.motion-site :is(.project-heading,.heading-row)>p{font-size:14px}
+ body.motion-site .project-stats{gap:12px}
+ body.motion-site .project-stats article{padding:24px!important;min-width:0}
+ body.motion-site .project-stats article>strong{font-size:clamp(60px,17vw,78px)!important}
+ body.motion-site .email-row{min-width:0;flex-wrap:wrap}
+ body.motion-site .email-row>a{font-size:clamp(15px,4.6vw,22px);overflow-wrap:anywhere}
+ body.motion-site .footer-inner{gap:16px;padding-block:28px}
+ body.motion-site .footer-inner>p{min-width:120px}
+ body.motion-site .cloud-actions{left:16px;right:16px;gap:12px;flex-wrap:wrap}
+ body.motion-site .cloud-primary{padding:15px;font-size:11px;gap:10px}
+ body.motion-site .cloud-secondary{font-size:10px;gap:6px}
+ body.motion-site .cloud-window-wrap{width:calc(100% - 36px);max-width:470px}
+ body.motion-site .cloud-window{padding-inline:16px}
+ body.motion-site .cloud-tabs{gap:4px}
+ body.motion-site .cloud-tabs button{padding:9px 7px;min-width:0}
+ body.motion-site .axle-instruments{grid-template-columns:repeat(3,minmax(0,1fr))}
+ body.motion-site .axle-instrument{min-width:0;padding:12px 8px}
+ body.motion-site .axle-instrument>strong{font-size:34px;gap:3px}
+ body.motion-site .axle-stops{left:8px;right:8px;gap:3px}
+ body.motion-site .axle-stops button{min-width:0;padding-inline:5px;font-size:10px}
+ body.motion-site .mindora-story{left:20px;right:20px}
+ html[data-mode=mindora] .motion-site .mindora-story h2{font-size:clamp(32px,8.7vw,40px)}
+ body.motion-site .mindora-button{gap:20px;max-width:100%}
+ body.motion-site .mindora-milestones>a{min-width:0;padding-inline:10px}
+ html[data-mode=ayush] .motion-site .ayush-manifesto h2{font-size:clamp(38px,10.8vw,47px)}
+ body.motion-site .ayush-manifesto{left:22px;right:22px;top:84px}
+ body.motion-site .ayush-description{font-size:13px}
+ html[data-mode=ayush] .motion-site .motion-hero{height:clamp(880px,120svh,1000px)!important;min-height:880px!important}
+ html[data-mode=mindora] .motion-site .motion-hero{height:clamp(930px,120svh,1020px)!important;min-height:930px!important}
+ body.motion-site .archive-book>div:first-child{padding:24px}
+ body.motion-site .bench-document dl{padding-inline:18px}
+ body.motion-site .frontier-tracks article{padding:28px 22px}
+ body.motion-site .work-body{padding:24px}
+ body.motion-site .cohort-details{padding:24px}
+ body.motion-site .cohort-intro{padding:24px}
+}
+@media(max-width:360px){
+ body.motion-site .mode-options button{font-size:9px;gap:3px}
+ body.motion-site .cloud-topline>span:last-child{display:none}
+ body.motion-site .cloud-window-bar{font-size:7px}
+ body.motion-site .cloud-foot>div{gap:16px}
+ body.motion-site .people-contributions li{flex-wrap:wrap;gap:8px}
+ body.motion-site .preview-label strong{font-size:19px}
+ body.motion-site .cloud-tabs button{font-size:9px}
+}
+
+@media(max-width:800px){body.motion-site .site-header nav{top:100%;z-index:40;max-height:calc(100dvh - 160px);overflow-y:auto;padding:10px 16px 16px}body.motion-site .axle-clock{left:55%;width:48px;height:48px}body.motion-site .axle-instrument{overflow:hidden}}
