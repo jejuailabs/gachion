@@ -33,9 +33,9 @@
     },
     axle: {
       topic: '마을 관련 사업', order: ['perspective'],
-      nav: [['마을의 일','#perspective'],['현장 과제','#field-workflows'],['남원1리 교육','#village-education'],['실증 계획','#village-plan']],
-      hero: ['마을의 일을 듣고,','현장에서 함께 씁니다.'],
-      lead: '이장·사무장의 반복 업무와 마을 홍보를 하나의 흐름으로 연결합니다. 제주에서 만든 교육용 시연을 실제 사용으로 검증하려 합니다.'
+      nav: [['마을의 필요','#village-need'],['AI 도구 5종','#ma2sa-tools'],['현장 확인','#village-evidence'],['실증 계획','#village-plan']],
+      hero: ['마을의 필요에서 시작해,','AI의 쓰임을 현장에서 시험합니다.'],
+      lead: '가치onAI는 마을의 흩어진 홍보와 반복 사무를 듣고, 제주마을과 Ma2Sa로 해결 가능성을 시연했습니다. 이제 실제 사용과 업무 경감 효과를 확인하려 합니다.'
     },
     cloud: {
       topic: '바이브코딩', order: ['project','perspective'],
@@ -52,12 +52,12 @@
     light: {
       topic: '우리는 누구인가', order: ['perspective','about'],
       nav: [['우리 모임','#perspective'],['함께하는 방식','#about'],['함께한 사람들','#people-title']],
-      hero: ['제주에서 만나,','함께 만드는 사람들.'],
-      lead: '가치onAI는 서로 다른 일을 하는 이웃이 AI를 함께 배우고, 자기 삶과 동네의 문제를 직접 풀어보는 모임입니다.'
+      hero: ['AI가 막막할 때,','서로 만나 길을 찾습니다.'],
+      lead: '서로 다른 경험을 가진 사람들이 만나 AI의 막막함을 함께 풉니다. 작은 시도가 새로운 연결의 시작이 됩니다.'
     }
   };
   const anchors = {
-    proof: nodes.proof, 'field-workflows': $('.field-workflows'), 'village-education': $('.field-dispatch'),
+    proof: nodes.proof, 'village-evidence': $('.field-proof'), 'village-education': $('.field-dispatch'),
     'project-method': $('.project-method'), 'demo-moment': $('.demo-moment'),
     'future-tracks': $('.frontier-tracks'), 'future-support': $('.frontier-support')
   };
@@ -146,9 +146,9 @@
       setLink('.mindora-secondary','#learning','당근에서 함께 배운 것들');
     }
     if (mode === 'axle') {
-      put('#axle-title','마을의 일을 듣고,<br><em>현장에서 함께 쓰다.</em>');
-      setLink('.axle-cta','#perspective','마을 활동 살펴보기 <b aria-hidden="true">↗</b>');
-      put('.axle-intro-bottom>span','마을의 소식과 반복되는 일,<br>주민의 현장에서 출발합니다.');
+      put('#axle-title','마을의 필요에서 시작해,<br><em>AI의 쓰임을 현장에서 시험합니다.</em>');
+      setLink('.axle-cta','#village-need','마을의 필요와 해법 보기 <b aria-hidden="true">↗</b>');
+      put('.axle-intro-bottom>span','이장·사무장의 업무를 듣고,<br>교육과 시연으로 가능성을 확인했습니다.');
     }
     if (mode === 'cloud') {
       put('#cloud-title','내 주변의 문제를,<br><em>직접 만드는 해결책으로.</em>');

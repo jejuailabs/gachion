@@ -59,7 +59,7 @@
     {
       "name": "제주마을",
       "category": "마을의 소식과 여행",
-      "description": "마을별 소식·행사·자원을 한곳에 모아 지역과 계절, 주제별로 찾아보는 화면입니다. 공개가 승인된 정보만 외부에 연결하는 방향으로 발전시키고 있습니다.",
+      "description": "마을이 사진 한 장을 올리면 중앙 LIVE 소식에서 오늘을 전합니다. 마을별 로컬 체험상품도 한곳에 모아 관광객이 연중 찾아보고 선택할 수 있습니다.",
       "url": "https://jejuvillage.vercel.app/",
       "image": "assets/village-screen.webp",
       "theme": "village",
@@ -72,7 +72,7 @@
       "name": "마을AI사무장",
       "alias": "Ma2Sa",
       "category": "마을의 일에 여유를",
-      "description": "영수증 사진의 표 정리와 회의 녹음의 회의록 초안 등을 시연한 AI 사무장입니다. 마을별 기록·양식과 담당자 검수를 잇는 통합 서비스는 실증을 준비하고 있습니다.",
+      "description": "공고문 분석, 영수증→엑셀, 양식 변환, 회의록 정리, 대신 읽어주기로 이장·사무장의 반복 업무를 돕습니다. 결과는 담당자가 검수하며 실제 절감 효과는 실증 예정입니다.",
       "url": "https://ma2sa.vercel.app/",
       "image": "assets/office-screen.webp",
       "theme": "office",
