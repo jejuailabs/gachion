@@ -1,38 +1,168 @@
-/* Six editorial perspectives share verified facts and working service links. */
-(()=>{
- 'use strict';
- const configs={
- light:{topic:'활동 한눈에',order:['proof','perspective','project','works','about','history','learning','belief','next','join'],nav:['첫 실험','만든 것들','함께한 사람들','다음 활동'],hero:['제주에서 같이 배우고,','일상에 쓸모를 만듭니다.'],heroLead:'당근의 작은 모임에서, 11명의 바이브코딩 실험으로.<br>사람의 질문을 작동하는 해결책으로 바꾸는 가치onAI.',project:['우리의 첫 실험은,','내 주변의 문제에서 시작됐습니다.','함께 배우던 이웃 11명이 4주 동안<br>문제를 찾고, 설명하고, AI와 만들고,<br>직접 시연하는 데까지 도전했습니다.'],works:['작은 필요에서 시작한,','커뮤니티의 결과물.','마을의 소식, 행정 업무, 가족의 기록, 동네의 발견.<br>각 서비스에서 쓰임을 만나보세요.'],about:['서로 다른 삶이 모여,','함께 만들 힘이 됩니다.'],aboutText:'트럭기사부터 전업주부, 공학박사까지.<br>직업도 경험도 다른 이웃들이<br>자기 삶의 질문을 가져옵니다.',next:'지금 이어지는 활동과,<br>앞으로 열어 갈 실험.',join:'당신의 동네에는<br>어떤 문제가 있나요?',nextCards:[0,1,2]},
- ayush:{topic:'결과와 기록',order:['works','perspective','project','about','proof','next','join'],nav:['실험의 규모','결과 아카이브','만드는 사람들','이어질 기록'],project:['첫 번째 실험을','세 개의 숫자로 남깁니다.','11명의 이웃이 4주 동안 3팀으로 도전했습니다.<br>작동하는 결과를 직접 설명하고 보여주는 경험.<br>이 기록의 출발점입니다.'],works:['상상하던 쓰임이,','하나의 화면이 되었습니다.','마을에서 가족의 일상까지.<br>서로 다른 필요를 담은 네 가지 프로젝트.',],about:['완성된 화면 뒤에는,','함께 만든 사람이 있습니다.'],aboutText:'문제를 꺼낸 사람, 질문을 정리한 사람,<br>화면을 만들고 다시 확인한 사람.<br>함께했기에 남길 수 있었던 기록입니다.',next:'결과를 남기고,<br>다음 사람이 시작할 수 있도록.',join:'이 기록을<br>함께 이어 갈까요?',nextCards:[2]},
- cloud:{topic:'만드는 과정',order:['project','perspective','works','about','next','proof','join'],nav:['4주의 과정','작동하는 결과','함께하는 규칙','다음 제작 실험'],project:['작은 질문 하나가,','해결책이 되기까지.','처음부터 앱을 만들지는 않았습니다.<br>1주차 퍼실리테이션에서 경험을 꺼내고,<br>무엇을 해결할지 함께 정하는 일부터 시작했습니다.'],works:['설명했던 생각이,','실제로 쓰는 도구가 되면.','제작 과정의 끝에서는 직접 써 봅니다.<br>커뮤니티의 서비스를 열어 확인해 보세요.'],about:['혼자 정답을 찾기보다,','함께 확인하며 만듭니다.'],aboutText:'생활의 경험을 꺼내고,<br>서로 다른 생각을 한 문서로 맞추고,<br>팀원 모두가 결과를 설명합니다.',next:'다음 4주에는,<br>당신의 질문을 만들어볼까요?',join:'만들어 보고 싶은<br>작은 문제가 있나요?',nextCards:[]},
- axle:{topic:'마을의 쓰임',order:['perspective','works','history','project','about','next','proof','join'],nav:['시민의 첫 실험','마을의 도구','현장과 사람','다음 연결'],project:['마을의 도구도,','사람의 질문에서 출발합니다.','생활의 문제를 직접 찾아 제작하고 시연한<br>11명의 바이브코딩 경험.<br>현장의 일을 함께 풀어 볼 출발점이 되었습니다.'],works:['마을의 소식과 일에,','연결할 수 있는 도구들.','제주마을과 마을AI사무장을 중심으로,<br>생활의 쓰임을 넓혀 가는 프로젝트를 살펴보세요.'],about:['도구를 만들 때,','현장을 아는 사람이 필요합니다.'],aboutText:'무엇이 자주 반복되는지,<br>어느 순간에 도움이 필요한지.<br>현장의 경험이 도구의 방향을 정합니다.',next:'교육과 도구가,<br>현장에서 이어지도록.',join:'우리 마을의 일부터<br>같이 살펴볼까요?',nextCards:[0,1]},
- mindora:{topic:'사람과 배움',order:['perspective','about','learning','project','works','proof','next','join'],nav:['11명의 첫 성취','이웃이 만든 것','서로 다른 경험','다음 만남'],project:['처음의 막막함을,','함께 만든 성취로.','11명이 서로의 경험을 듣고, 4주 동안<br>3팀으로 문제를 풀었습니다.<br>AI를 내 삶에 적용해 볼 수 있다는 자신감이 남았습니다.'],works:['우리 이웃들의 관심이,','이런 도구로 이어졌습니다.','돌보고, 일하고, 동네를 알아가는 생활.<br>익숙한 경험에서 발견한 질문들입니다.'],about:['삶의 경험은 달라도,','처음 배우는 자리는 같습니다.'],aboutText:'트럭기사, 전업주부, 공학박사,<br>건축사 대표와 대리운전기사까지.<br>모임을 거쳐 간 다양한 삶의 전문가들입니다.',next:'잘 몰라도 괜찮은,<br>다음 만남을 기다립니다.',join:'다음 테이블에<br>함께 앉을까요?',nextCards:[0]},
- frontier:{topic:'다음 실험',order:['project','perspective','works','about','proof','next','join'],nav:['이미 해 본 실험','출발점이 된 도구','함께할 사람들','준비하는 일'],hero:['제주에서 시작한 가능성,','더 많은 일상으로.'],heroLead:'11명의 첫 실험을 넘어, 마을과 시민의 다음 도전으로.<br>배움이 제작과 현장으로 이어지는 장을 구상합니다.',project:['다음 가능성의 출발점은,','이미 함께 해 본 경험입니다.','구상에 앞서, 11명의 시민이 4주 동안<br>3팀으로 직접 만들어 본 실험이 있습니다.<br>이 첫 경험을 더 많은 이웃에게 넓히려 합니다.'],works:['다음 실험의 출발점,','이미 만들어 본 도구들.','마을 소식과 행정, 가족의 일상과 지역 연결.<br>이 경험을 현장의 다음 질문과 만나게 하려 합니다.'],about:['더 넓게 시도하려면,','더 다양한 경험이 필요합니다.'],aboutText:'문제를 아는 현장과, 배움을 여는 사람,<br>제작을 돕고 결과를 검토하는 사람.<br>각자의 역할로 다음 실험을 연결합니다.',next:'계속 시도할 수 있는 장을<br>준비하고 있습니다.',join:'다음 가능성에<br>함께 힘을 보태 주세요.',nextCards:[1]}
- };
- const root=document.documentElement,main=document.querySelector('main'),hero=document.querySelector('.motion-hero');
- const nodes={hero:hero.closest(".scene-runway")||hero,strip:document.querySelector('.kinetic-strip'),proof:document.querySelector('.proof-bar'),perspective:document.querySelector('#perspective'),project:document.querySelector('#project'),works:document.querySelector('#works'),about:document.querySelector('#about'),history:document.querySelector('#history'),learning:document.querySelector('#learning'),belief:document.querySelector('.belief'),next:document.querySelector('#next'),join:document.querySelector('#join')};
- const $=s=>document.querySelector(s),put=(s,t)=>{const e=$(s);if(e&&t!==undefined)e.innerHTML=t;};
- let previous='';
- function apply(){
-  const mode=root.dataset.mode,c=configs[mode]||configs.light;
-  if(previous!==mode){
-   Object.entries(nodes).forEach(([key,node])=>{if(!['hero','strip'].includes(key))node.hidden=!c.order.includes(key);});
-   [nodes.hero,nodes.strip,...c.order.map(key=>nodes[key])].forEach(node=>main.append(node));
-   nodes.strip.hidden=mode!=='light';
-   document.querySelectorAll('[data-perspective]').forEach(e=>e.hidden=e.dataset.perspective!==mode);
-   previous=mode;
+/* Six existing visual worlds, each with one editorial subject. */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const main = document.querySelector('main');
+  const $ = selector => document.querySelector(selector);
+  const nodes = {
+    hero: $('.motion-hero').closest('.scene-runway') || $('.motion-hero'),
+    strip: $('.kinetic-strip'),
+    proof: $('.proof-bar'),
+    perspective: $('#perspective'),
+    project: $('#project'),
+    works: $('#works'),
+    about: $('#about'),
+    history: $('#history'),
+    learning: $('#learning'),
+    belief: $('.belief'),
+    next: $('#next'),
+    join: $('#join')
+  };
+  const configs = {
+    ayush: {
+      topic: '포트폴리오', order: ['works'],
+      nav: [['지역과 생활','#category-local'],['배움과 콘텐츠','#category-content'],['전문 업무와 소통','#category-work']],
+      hero: ['우리가 만든 것들을,','한곳에서 만나보세요.'],
+      lead: '지역과 생활, 배움과 콘텐츠, 전문 업무와 소통. 9개 솔루션이 어떤 문제를 푸는지 살펴보세요.'
+    },
+    mindora: {
+      topic: '시작과 역사', order: ['proof','history','learning'],
+      nav: [['당근 모임의 기록','#proof'],['걸어온 길','#history'],['함께 배운 것','#learning'],['모임 후기','#voices-grid']],
+      hero: ['당근의 작은 모임에서,','우리의 이야기가 시작됐습니다.'],
+      lead: '혼자 배우던 AI를 이웃과 나누던 시간. 그 만남이 직접 만들고 마을에서 써 보는 활동으로 이어졌습니다.'
+    },
+    axle: {
+      topic: '마을 관련 사업', order: ['perspective'],
+      nav: [['마을의 일','#perspective'],['현장 과제','#field-workflows'],['남원1리 교육','#village-education'],['실증 계획','#village-plan']],
+      hero: ['마을의 일을 듣고,','현장에서 함께 씁니다.'],
+      lead: '이장·사무장의 반복 업무와 마을 홍보를 하나의 흐름으로 연결합니다. 제주에서 만든 교육용 시연을 실제 사용으로 검증하려 합니다.'
+    },
+    cloud: {
+      topic: '바이브코딩', order: ['project','perspective'],
+      nav: [['1기 대시보드','#project'],['만드는 과정','#project-method'],['시연의 순간','#demo-moment'],['MD 문서 예시','#perspective']],
+      hero: ['내 주변의 문제를,','내 손으로 해결합니다.'],
+      lead: '제주 이웃 11명이 4주 동안 3팀으로 문제를 정의하고, AI와 만들고, 직접 시연했습니다.'
+    },
+    frontier: {
+      topic: '앞으로의 방향', order: ['perspective','next'], nextCards: [1,2],
+      nav: [['다음 실험','#perspective'],['네 가지 방향','#future-tracks'],['필요한 협력','#future-support'],['준비하는 일','#next']],
+      hero: ['한 번의 실험을,','다음 가능성으로 이어갑니다.'],
+      lead: '배움에서 제작으로, 제작에서 현장으로. 계속 시도할 수 있는 자리와 협력을 구상합니다.'
+    },
+    light: {
+      topic: '우리는 누구인가', order: ['perspective','about'],
+      nav: [['우리 모임','#perspective'],['함께하는 방식','#about'],['함께한 사람들','#people-title']],
+      hero: ['제주에서 만나,','함께 만드는 사람들.'],
+      lead: '가치onAI는 서로 다른 일을 하는 이웃이 AI를 함께 배우고, 자기 삶과 동네의 문제를 직접 풀어보는 모임입니다.'
+    }
+  };
+  const anchors = {
+    proof: nodes.proof, 'field-workflows': $('.field-workflows'), 'village-education': $('.field-dispatch'),
+    'project-method': $('.project-method'), 'demo-moment': $('.demo-moment'),
+    'future-tracks': $('.frontier-tracks'), 'future-support': $('.frontier-support')
+  };
+  Object.entries(anchors).forEach(([id, element]) => { if (element) element.id = id; });
+  const put = (selector, html) => { const element = $(selector); if (element) element.innerHTML = html; };
+  const setLink = (selector, href, label) => {
+    const element = $(selector);
+    if (element) { element.href = href; if (label) element.innerHTML = label; }
+  };
+  function updatePortfolioAnchors() {
+    document.querySelectorAll('#works-grid .work-card').forEach((card, index) => { if (!card.id) card.id = `work-${index + 1}`; });
   }
-  document.querySelectorAll('#navigation a').forEach((a,i)=>a.textContent=c.nav[i]);
-  put('#project-title',`${c.project[0]}<br><em>${c.project[1]}</em>`);put('.project-heading>p',c.project[2]);
-  put('#works h2',`${c.works[0]}<br><span class="teal">${c.works[1]}</span>`);put('#works .heading-row>p',c.works[2]);
-  put('#about h2',`${c.about[0]}<br><span class="teal">${c.about[1]}</span>`);put('#about .large-copy',c.aboutText);
-  put('#next>.section-heading h2',c.next);put('#join h2',c.join);
-  const title=$('#hero-title');title.dataset.editorial='true';const lines=c.hero||configs.light.hero;title.innerHTML=`<span class="headline-row"><span>${lines[0]}</span></span><br><span class="headline-row"><span class="light-title">${lines[1]}</span></span>`;
-  put('.hero-copy .hero-description',c.heroLead||configs.light.heroLead);
-  document.querySelectorAll('#next-grid>.next-card').forEach((e,i)=>e.hidden=!c.nextCards.includes(i));
-  $('#next-grid').hidden=!c.nextCards.length;
-  document.querySelectorAll('[data-mode-choice]:not([hidden])').forEach(b=>{const item=configs[b.dataset.modeChoice];b.querySelector('span').dataset.topic=item.topic;b.setAttribute('aria-label',`${b.querySelector('span').textContent} · ${item.topic}`);});
-  if(mode==='light'||mode==='frontier')hero.setAttribute('aria-labelledby','hero-title');
- }
- document.addEventListener('design-mode-change',apply);document.addEventListener('content-ready',apply);document.addEventListener('DOMContentLoaded',apply);apply();
+  function updateHistory() {
+    const records = [
+      ['시작','내가 필요해서 시작한 AI','현제주닷컴을 새롭게 만드는 과정에서 만난 AI를 혼자 배우고, 동네 사람들과 나누기 시작했습니다.'],
+      ['당근 모임','같은 테이블에서 배우다','AI 기초에서 발표 자료, 이미지·영상, 게임 실습까지. 모르면 묻고 다음에 다시 만나는 시간이 쌓였습니다.'],
+      ['제작으로 확장','배움에서 직접 만들기로','함께 배우던 이웃들이 자기 삶의 문제를 꺼내 작은 해결책을 만드는 실험으로 나아갔습니다.'],
+      ['마을의 현장','배움을 일상과 마을로','모임에서 익힌 도구를 주민의 일상과 마을의 일에 적용해 보는 현장으로 이어졌습니다.']
+    ];
+    const items = document.querySelectorAll('#timeline .timeline-item');
+    items.forEach((item,index) => {
+      if (!records[index]) return;
+      item.querySelector('span').textContent = records[index][0];
+      item.querySelector('h3').textContent = records[index][1];
+      item.querySelector('p').textContent = records[index][2];
+    });
+    const feature = $('.gallery-feature>.photo-button');
+    if (feature) {
+      feature.dataset.photo = 'assets/community.webp';
+      feature.dataset.caption = '당근 AI 모임 · 같은 테이블에서 함께 배우던 시간';
+      feature.setAttribute('aria-label','당근 AI 모임 사진 크게 보기');
+      const photo = feature.querySelector('img');
+      photo.src = 'assets/community.webp';
+      photo.alt = '카페의 긴 테이블에 모여 이야기를 나누는 커뮤니티 참여자들';
+      put('.gallery-feature .photo-caption','<span>작은 모임에서 시작한 이야기.</span><span>당근 AI 모임</span>');
+    }
+  }
+  function apply() {
+    const mode = root.dataset.mode in configs ? root.dataset.mode : 'light';
+    const config = configs[mode];
+    Object.entries(nodes).forEach(([key, node]) => {
+      if (node && !['hero','strip'].includes(key)) node.hidden = !config.order.includes(key);
+    });
+    nodes.strip.hidden = mode !== 'light';
+    [nodes.hero, nodes.strip, ...config.order.map(key => nodes[key])].forEach(node => { if (node) main.append(node); });
+    document.querySelectorAll('[data-perspective]').forEach(element => { element.hidden = element.dataset.perspective !== mode; });
+    document.querySelectorAll('#navigation a').forEach((element, index) => {
+      const item = config.nav[index];
+      element.hidden = !item;
+      if (item) { element.textContent = item[0]; element.href = item[1]; }
+    });
+    document.querySelectorAll('[data-mode-choice]:not([hidden])').forEach(button => {
+      const item = configs[button.dataset.modeChoice];
+      if (!item) return;
+      button.querySelector('span').dataset.topic = item.topic;
+      button.title = item.topic;
+      button.setAttribute('aria-label', `${button.querySelector('span').textContent} · ${item.topic}`);
+    });
+    put('#hero-title', `<span class="headline-row"><span>${config.hero[0]}</span></span><br><span class="headline-row"><span class="light-title">${config.hero[1]}</span></span>`);
+    put('.hero-copy .hero-description', config.lead);
+    $('#hero-title').dataset.editorial = 'true';
+    put('#world-caption', config.topic);
+    document.title = `${config.topic} | 가치onAI`;
+    const description = $('meta[name="description"]');
+    if (description) description.content = config.lead;
+    setLink('.nav-actions .button', config.nav[0][1], `${config.topic} 보기 <span aria-hidden="true">↗</span>`);
+    if (mode === 'light' || mode === 'frontier') nodes.hero.setAttribute('aria-labelledby','hero-title');
+    if (mode === 'light' || mode === 'frontier') {
+      setLink('.hero-buttons .button', '#perspective', `${config.topic} 살펴보기 <span aria-hidden="true">↗</span>`);
+      setLink('.hero-buttons .text-link', mode === 'light' ? '#about' : '#next', mode === 'light' ? '함께하는 사람들 ↓' : '준비하는 일 ↓');
+      setLink('.scroll-cue','#perspective');
+    }
+    updatePortfolioAnchors();
+    if (mode === 'ayush') {
+      put('#ayush-title','결과물을 모아,<br>직접 살펴보는<br><em>포트폴리오.</em>');
+      put('.ayush-description','지역과 생활, 배움과 콘텐츠, 전문 업무까지.<br>9개 솔루션의 화면과 쓰임을 살펴보세요.');
+      setLink('.ayush-enter','#works','프로젝트 모음 보기 <span aria-hidden="true">↗</span>');
+      put('#works h2','만든 결과물을,<br><span class="teal">한곳에서 만나보세요.</span>');
+      put('#works .heading-row>p','마을·생활·전시·게임·공간 정보·통역까지.<br>화면과 핵심 기능을 보고 각 사이트를 직접 열어보세요.');
+    }
+    if (mode === 'mindora') {
+      updateHistory();
+      put('#mindora-title','당근에서 만나,<br><em>함께 걸어온 시간.</em>');
+      put('.mindora-lead','작은 AI 모임에서 시작한 만남.<br>배우고 나누던 시간이 직접 만드는 실험과<br>마을의 현장으로 이어졌습니다.');
+      setLink('.mindora-button','#history','우리의 시작 읽기 <span aria-hidden="true">↗</span>');
+      setLink('.mindora-secondary','#learning','당근에서 함께 배운 것들');
+    }
+    if (mode === 'axle') {
+      put('#axle-title','마을의 일을 듣고,<br><em>현장에서 함께 쓰다.</em>');
+      setLink('.axle-cta','#perspective','마을 활동 살펴보기 <b aria-hidden="true">↗</b>');
+      put('.axle-intro-bottom>span','마을의 소식과 반복되는 일,<br>주민의 현장에서 출발합니다.');
+    }
+    if (mode === 'cloud') {
+      put('#cloud-title','내 주변의 문제를,<br><em>직접 만드는 해결책으로.</em>');
+      put('.cloud-intro>p:last-child','제주 이웃 11명 · 4주 · 3팀.<br>문제를 찾고 AI와 만들고 직접 시연한 첫 실험.');
+      setLink('.cloud-actions .cloud-secondary','#perspective','문서화 방법 보기 <span aria-hidden="true">↓</span>');
+    }
+    if (mode === 'frontier') {
+      document.querySelectorAll('#next-grid>.next-card').forEach((element,index) => { element.hidden = !config.nextCards.includes(index); });
+      put('#next>.section-heading h2','진행하는 일과,<br>구상하는 일을 구분합니다.');
+    }
+    $('#next-grid').hidden = mode !== 'frontier';
+  }
+  document.addEventListener('design-mode-change', apply);
+  document.addEventListener('content-ready', apply);
+  document.addEventListener('DOMContentLoaded', apply);
+  apply();
 })();

@@ -48,43 +48,109 @@
       "image": "assets/namwon.webp",
       "caption": "남원1리 AI활용 심화교육",
       "alt": "남원1리 마을 공동학습회 AI활용 심화교육 현수막과 교육 화면"
+    },
+    {
+      "image": "assets/community-table.webp",
+      "caption": "카페에서 이어진 AI 모임",
+      "alt": "카페의 둥근 테이블에서 노트북을 펼치고 이야기하는 모임 참여자들"
     }
   ],
   "works": [
     {
       "name": "제주마을",
       "category": "마을의 소식과 여행",
-      "description": "흩어져 있던 마을 소식과 체험을 한곳에. 주민이 전하는 이야기를 여행자와 이웃이 쉽게 만날 수 있도록 연결합니다.",
+      "description": "마을별 소식·행사·자원을 한곳에 모아 지역과 계절, 주제별로 찾아보는 화면입니다. 공개가 승인된 정보만 외부에 연결하는 방향으로 발전시키고 있습니다.",
       "url": "https://jejuvillage.vercel.app/",
       "image": "assets/village-screen.webp",
       "theme": "village",
       "previewTitle": "제주 마을,<br>지금 이 순간을 만나요",
       "previewLabel": "LOCAL STORIES",
-      "tag": "소식 · 마을찾기 · 체험"
+      "tag": "소식 · 마을찾기 · 체험",
+      "group": "local"
     },
     {
       "name": "마을AI사무장",
       "alias": "Ma2Sa",
       "category": "마을의 일에 여유를",
-      "description": "공고문 읽기, 회의록 정리, 영수증 처리처럼 반복되는 마을 업무. AI와 함께 업무의 부담을 덜어내는 도구를 만들었습니다.",
+      "description": "영수증 사진의 표 정리와 회의 녹음의 회의록 초안 등을 시연한 AI 사무장입니다. 마을별 기록·양식과 담당자 검수를 잇는 통합 서비스는 실증을 준비하고 있습니다.",
       "url": "https://ma2sa.vercel.app/",
       "image": "assets/office-screen.webp",
       "theme": "office",
       "previewTitle": "마을의 일은 가볍게,<br>사람에게 더 가까이",
       "previewLabel": "AI FOR VILLAGES",
-      "tag": "마을 행정 · 업무 도우미"
+      "tag": "마을 행정 · 업무 도우미",
+      "group": "local"
     },
     {
       "name": "건강비서",
       "category": "가족의 일상을 기록하다",
-      "description": "병원 방문부터 처방과 검진까지. 가족의 건강 기록을 모아 살펴볼 수 있는 건강일기입니다.",
-      "url": "https://kyeojin2017.github.io/aihi/"
+      "description": "날짜별 증상, 병원 방문, 처방전, 접종·검진을 한 화면에서 정리하는 가족 건강일지입니다.",
+      "url": "https://kyeojin2017.github.io/aihi/",
+      "group": "local",
+      "image": "assets/health-diary.png",
+      "previewType": "desktop",
+      "tag": "증상 · 병원 방문 · 처방전"
     },
     {
       "name": "LOCAL HERO",
       "category": "가까운 동네를 새롭게 발견하다",
       "description": "내 주변의 가게, 동네 소식, 직거래 정보를 연결합니다. 가까이에 있던 동네의 가치를 발견하는 서비스입니다.",
-      "url": "https://insua.vercel.app/"
+      "url": "https://insua.vercel.app/",
+      "group": "local",
+      "image": "assets/localhero-capture.webp",
+      "previewType": "desktop",
+      "tag": "동네 가게 · 직거래 · 소식"
+    },
+    {
+      "name": "우리들의 온라인 전시실",
+      "category": "학교의 기억을 걷는 3D 전시",
+      "description": "제주 학교를 지도에서 고른 뒤, 3D 공간을 걸어 교실과 작품을 만나는 온라인 전시실. 애월초등학교 장면에서는 교실별 전시와 기억창고를 살펴볼 수 있습니다.",
+      "url": "https://aweol.vercel.app/",
+      "image": "assets/aweol-capture.webp",
+      "previewType": "desktop",
+      "tag": "지도 · 3D 학교 · 교실 전시",
+      "group": "content"
+    },
+    {
+      "name": "삼국지 카드 대전",
+      "category": "역사를 함께 플레이하는 게임",
+      "description": "30턴 정보전을 배경으로 국면 전환 횟수와 AI 난이도를 선택합니다. 친구 대결, 카드 컬렉션, 세계 경영 메뉴로 놀이를 확장합니다.",
+      "url": "https://samguk.vercel.app/",
+      "image": "assets/samguk-capture.webp",
+      "previewType": "desktop",
+      "tag": "30턴 · AI 대전 · 친구 대결",
+      "group": "content"
+    },
+    {
+      "name": "PLINT",
+      "category": "필지 판단을 돕는 공간 정보",
+      "description": "주소 하나에서 필지·법규·입지·사업성 정보를 함께 살피도록 설계한 서비스. 3D 공간 맥락과 데이터 상태를 보고 판단 근거를 확인합니다.",
+      "url": "https://plint.kr/",
+      "image": "assets/plint-capture.webp",
+      "previewType": "desktop",
+      "tag": "필지 · 규제 · 3D 맥락",
+      "group": "work"
+    },
+    {
+      "name": "쏙튜브",
+      "alias": "SSOKTUBE",
+      "category": "영상과 자료를 지식으로 정리",
+      "description": "유튜브 주소를 넣거나 PDF·음성 파일을 올려 AI 요약을 시작합니다. 요리·학습·뉴스 등 주제별 분석 모드로 필요한 내용을 분류합니다.",
+      "url": "https://ssoktube.com/",
+      "image": "assets/ssoktube-capture.webp",
+      "previewType": "desktop",
+      "tag": "유튜브 · PDF · 음성 요약",
+      "group": "content"
+    },
+    {
+      "name": "InterLive",
+      "category": "실시간 AI 통역",
+      "description": "마이크로 시작하는 대면 통역과 회의 주소를 쓰는 회의 통역을 제공합니다. 실시간 자막과 통역 음성, 기록·관리 화면을 한 흐름으로 연결합니다.",
+      "url": "https://aitr.kr/ko",
+      "image": "assets/aitr-capture.webp",
+      "previewType": "desktop",
+      "tag": "대면 · 회의 · 실시간 자막",
+      "group": "work"
     }
   ],
   "next": [

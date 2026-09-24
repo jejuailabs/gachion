@@ -1,30 +1,27 @@
-# Six perspectives — editorial restructuring
+# 기존 6개 영상·모션 콘셉트의 콘텐츠 분리
 
-Updated 2026-09-23. Four older modes (`aurora`, `cosmos`, `lab`, `cinema`) are retained in source and hidden from the picker. Saved preferences for hidden modes fall back to Light. Keyboard navigation uses only the six visible modes.
+2026-09-24. 원래 랜딩의 화면, 영상, 모션, 로고와 여섯 콘셉트 선택 구조를 유지했다. 편집은 `dist/perspectives.js`의 콘셉트별 내용 선택과 기존 `dist/index.html`의 소개 문구에 집중한다. 별도로 제작했던 6페이지 시안은 `../six-page-draft-archive/`에 보관했다.
 
-## Editorial map
-
-| Mode | Focus | Layout and reading order |
+| 기존 콘셉트 | 전담 주제 | 표시하는 본문 |
 | --- | --- | --- |
-| Ayush | Results and records | Project gallery → photographic essay → publishing concept → cohort summary |
-| Cloud Atelier | How ideas become tools | Four-week process → annotated example MD specification → verification principles → service directory |
-| Axle Journey | Local applications | Workflow matrix → Namwon field report → featured village tools → timeline |
-| Mindora | People and learning | Human essay/photo → complementary contributions → professions → real community reviews → first achievement |
-| Frontier | Future experiments | Existing cohort evidence → four proposed tracks → space/field/mentoring needs → next steps |
-| Light | Overall introduction | Community scale → origin/experiment/field overview → full activity story |
+| Ayush | 포트폴리오 | 지역과 생활 4개 · 배움과 콘텐츠 3개 · 전문 업무와 소통 2개로 묶은 공개 프로젝트 9개 |
+| Mindora | 당근에서 시작한 역사 | 누적 활동 대시보드, 연혁, 당근 실습과 공개 후기 |
+| Axle Journey | 마을 관련 사업 | 대표 현장 운영 수치, 2026년 7월 교육·사용 문의, AI 사무장 시연, 행정·홍보·마을정보 연결 흐름, 남원1리 현장 교육, 제주 서쪽·센터 교육 사진, 제주 실증 계획 |
+| Cloud Atelier | 바이브코딩 | 1기 숫자 대시보드, 책 초안의 세 팀 문제, 과정, 실습 현장, MD 문서화 예시 |
+| Frontier | 앞으로의 방향 | 네 가지 구상 방향, 필요한 협력, 출판 기획 상태 |
+| 빛의 연결 | 우리는 누구인가 | 모임의 성격, 사람들, 원칙 |
 
-Each view keeps the project, services, people, next and contact destinations available. Headings, navigation wording, section order and optional chapters change with the selected mode. Shared verified numbers remain consistent. Existing hero artwork/video/3D assets are retained.
+여섯 모드 모두 동일한 화면에서 전환된다. 첫 화면은 ‘우리는 누구인가’이며 포트폴리오는 콘셉트 선택의 마지막에 둔다. 상단의 별도 ‘포트폴리오 보기’ 버튼은 표시하지 않는다. 메뉴의 주제명과 섹션 링크는 모드에 맞춰 바뀌며, 다른 주제의 본문은 숨긴다. 이전의 숨겨진 네 모드는 선택 메뉴에 노출하지 않는다.
 
-## Source mapping and editorial boundaries
+## 숫자와 근거
 
-- `repo/AI_동네실험실_출판기획제안서.pdf`: pp. 2–3, 7–17, 23–29. People-first narrative; discovering/defining problems; MD specification; small steps; human validation; demonstrations; planned documentation and publishing. Speculative chapter scenes/interview examples were not converted into attributed testimony.
-- `repo/jeju_ai_ax_livinglab_proposal.pdf`: pp. 3–5. Four proposed tracks; village news and administrative tools; Namwon education. Roadmap is explicitly a concept, not an approved/funded programme. Candidate institutions, budgets and target KPIs are not presented as achievements.
-- `repo/가치onAI_랜딩페이지_구현전략_보고서.pdf`: pp. 2–10. Audience needs; evidence before plans; service purposes; first cohort and current activities.
-- Conversation transcript: context for the need to connect education, field work, records and sustainable activity. No private quotations, personal disputes, speculative political claims or personal profiles published.
-- User corrections govern community figures: 250–300 people, approximately 50 gatherings, 5 months; as of September 2026. First cohort: 11 people, 4 weeks, 3 teams.
-- The Cloud Atelier specification is an explicitly labelled teaching example, not a claimed first-cohort document. The Axle matrix is an editorial summary of usage directions, not measured efficiency outcomes.
-- Existing real community quotes and their source links remain unchanged. Existing four services remain labelled community-related projects, not claimed to equal the three cohort teams.
+- 당근 모임: 2026년 9월 기준 운영진 집계의 누적 참여 250–300여 명, 약 50회, 운영 5개월. 현재 회원 수나 수료 인원으로 쓰지 않는다.
+- 바이브코딩 1기: 11명, 4주, 3팀. 공개 프로젝트 9개와 1기 3팀을 일대일로 연결하지 않는다.
+- 포트폴리오: 제공받은 공개 주소 9개. 6개 사이트는 2026년 9월 24일 방문해 주요 화면을 캡처했고, 건강비서 내부 화면은 사용자가 직접 제공했다. 9개가 모두 같은 팀의 제작물이라는 뜻으로 쓰지 않는다.
+- 마을 사업: 펀제주 운영 5년·CCTV 30여 개는 대표자 이력이다. 2026년 7월 16일 전화는 사용 문의이며 계약·도입이 아니다. 약 10개 마을·최소 4주 실증과 월 10만~15만원은 목표·가격 가설이다.
+- 미래 구상: 예산, 목표 수치, 기관 후보를 확정 성과로 표시하지 않는다.
+- 포트폴리오 화면 중 6장은 직접 방문한 사이트 캡처, 건강비서 1장은 사용자 제공 내부 화면, 기존 2장은 제공된 모바일 캡처다. 건강비서 공개 주소는 로그인으로 이동한다. 사진과 대화 원문은 `../repo/SOURCE_INVENTORY.md`의 편집 기준을 따른다.
 
-## Verification
+## 확인
 
-Static assets, unique IDs, internal anchor references, email destinations, four HTTPS service links and exclusion of private documents checked. All six modes tested at desktop and 390px mobile width: independent perspective, distinct section order, one selected mode, visible navigation targets, and no horizontal page overflow. Inspected the document example, workflow table, people/photo essay, archive and future tracks. No new image or video generation was needed for this editorial change.
+`node --check dist/perspectives.js`와 `node check.mjs`로 기본 구문·자산·링크를 확인했다. 브라우저에서 여섯 모드를 전환해 표시 섹션과 메뉴 앵커를 검사했고, 390px 모바일에서 가로 넘침이 없는지 확인했다.
